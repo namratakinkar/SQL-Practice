@@ -402,6 +402,150 @@ SELECT * FROM student_details;
 
 DROP TABLE student_details;
 
+-- __________________________________________________________________________________________________
+
+
+
+-- =====================================================
+-- Example 4 :- SCHOOL TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL)
+
+CREATE TABLE school(
+    school_id INT,
+    school_name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 3 :- INSERT DATA (DML)
+
+INSERT INTO school(school_id, school_name, city)
+VALUES
+(1, 'Sunrise School', 'Bhopal'),
+(2, 'Bright Future School', 'Indore'),
+(3, 'Green Valley School', 'Pune'),
+(4, 'Royal Public School', 'Mumbai'),
+(5, 'City Star School', 'Delhi');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 5 :- UPDATE DATA (DML)
+
+UPDATE school
+SET city = 'Bhopal'
+WHERE school_id = 3;
+
+
+-- STEP 6 :- DISPLAY UPDATED DATA (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 7 :- DELETE DATA (DML)
+
+DELETE FROM school
+WHERE school_id = 3;
+
+
+-- STEP 8 :- DISPLAY REMAINING DATA (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 9 :- ADD COLUMN (DDL)
+
+ALTER TABLE school
+ADD COLUMN total_students INT;
+
+
+-- STEP 10 :- DISPLAY TABLE WITH NEW COLUMN (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 11 :- UPDATE STUDENT COUNT (DML)
+
+UPDATE school
+SET total_students = 150
+WHERE school_id = 4;
+
+
+-- STEP 12 :- DISPLAY UPDATED STUDENT COUNT (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 13 :- RENAME COLUMN (DDL)
+
+ALTER TABLE school
+RENAME COLUMN city TO school_city;
+
+
+-- STEP 14 :- DISPLAY RENAMED COLUMN (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 15 :- ALTER COLUMN TYPE (DDL)
+
+ALTER TABLE school
+ALTER COLUMN school_name TYPE VARCHAR(100);
+
+
+-- STEP 16 :- DISPLAY UPDATED TABLE (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 17 :- DROP COLUMN (DDL)
+
+ALTER TABLE school
+DROP COLUMN school_city;
+
+
+-- STEP 18 :- DISPLAY TABLE (DQL)
+
+SELECT * FROM school;
+
+
+-- STEP 19 :- RENAME TABLE (DDL)
+
+ALTER TABLE school
+RENAME TO school_details;
+
+
+-- STEP 20 :- DISPLAY RENAMED TABLE (DQL)
+
+SELECT * FROM school_details;
+
+
+-- STEP 21 :- TRUNCATE TABLE (DDL)
+
+TRUNCATE TABLE school_details;
+
+
+-- STEP 22 :- DISPLAY EMPTY TABLE (DQL)
+
+SELECT * FROM school_details;
+
+
+-- STEP 23 :- DROP TABLE (DDL)
+
+DROP TABLE school_details;
+
 
 
 -- =====================================================
