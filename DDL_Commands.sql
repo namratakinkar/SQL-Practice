@@ -137,10 +137,10 @@ ALTER TABLE teacher
 ADD COLUMN city VARCHAR(50);
 
 ALTER TABLE teacher
-RENAME COLUMN subject to teacher_subject;
+RENAME COLUMN subject TO teacher_subject;
 
 ALTER TABLE teacher
-ALTER COLUMN teacher_name type VARCHAR(100);
+ALTER COLUMN teacher_name TYPE VARCHAR(100);
 
 ALTER TABLE teacher
 DROP COLUMN city;
@@ -155,7 +155,63 @@ DROP TABLE teacher_details;
 -- ____________________________________________________________________________________________________
 
 
+-- Example 4 :- WORKER TABLE
+
+CREATE TABLE worker(
+    worker_id INT,
+    worker_name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+ALTER TABLE worker
+ADD COLUMN salary INT;
+
+ALTER TABLE worker
+RENAME COLUMN city TO worker_city;
+
+ALTER TABLE worker
+ALTER COLUMN worker_name TYPE VARCHAR(100);
+
+ALTER TABLE worker
+DROP COLUMN salary;
+
+ALTER TABLE worker
+RENAME TO worker_details;
+
+TRUNCATE TABLE worker_details;
+
+DROP TABLE worker_details;
+
+-- _________________________________________________________________________________________________
 
 
+-- Example 5 :- EMPLOYEE TABLE
+
+CREATE TABLE employee(
+    employee_id INT,
+    employee_name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+ALTER TABLE employee
+ADD COLUMN salary INT;
+
+ALTER TABLE employee
+RENAME COLUMN city TO employee_city;
+
+ALTER TABLE employee
+ALTER COLUMN employee_name TYPE VARCHAR(100);
+
+ALTER TABLE employee
+DROP COLUMN salary;
+
+ALTER TABLE employee
+RENAME TO employee_details;
+
+TRUNCATE TABLE employee_details;
+
+DROP TABLE employee_details;
+
+-- ________________________________________________________________________________________________
 
 
