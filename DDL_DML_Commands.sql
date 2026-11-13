@@ -259,6 +259,150 @@ SELECT * FROM employee_details;
 
 DROP TABLE employee_details;
 
+-- ________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 3 :- STUDENT TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL)
+
+CREATE TABLE student(
+    student_id INT,
+    student_name VARCHAR(50),
+    course VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 3 :- INSERT DATA (DML)
+
+INSERT INTO student(student_id, student_name, course)
+VALUES
+(1, 'Anjali', 'Python'),
+(2, 'Rahul', 'Java'),
+(3, 'Neha', 'SQL'),
+(4, 'Amit', 'Python'),
+(5, 'Priya', 'Web Development');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 5 :- UPDATE DATA (DML)
+
+UPDATE student
+SET course = 'Data Science'
+WHERE student_id = 3;
+
+
+-- STEP 6 :- DISPLAY UPDATED DATA (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 7 :- DELETE DATA (DML)
+
+DELETE FROM student
+WHERE student_id = 5;
+
+
+-- STEP 8 :- DISPLAY FINAL DATA (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 9 :- ADD COLUMN (DDL)
+
+ALTER TABLE student
+ADD COLUMN marks INT;
+
+
+-- STEP 10 :- DISPLAY TABLE WITH NEW COLUMN (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 11 :- UPDATE MARKS (DML)
+
+UPDATE student
+SET marks = 85
+WHERE student_id = 1;
+
+
+-- STEP 12 :- DISPLAY UPDATED MARKS (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 13 :- RENAME COLUMN (DDL)
+
+ALTER TABLE student
+RENAME COLUMN course TO student_course;
+
+
+-- STEP 14 :- DISPLAY RENAMED COLUMN (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 15 :- ALTER COLUMN DATATYPE (DDL)
+
+ALTER TABLE student
+ALTER COLUMN student_name TYPE VARCHAR(100);
+
+
+-- STEP 16 :- DISPLAY UPDATED TABLE (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 17 :- DROP COLUMN (DDL)
+
+ALTER TABLE student
+DROP COLUMN marks;
+
+
+-- STEP 18 :- DISPLAY TABLE (DQL)
+
+SELECT * FROM student;
+
+
+-- STEP 19 :- RENAME TABLE (DDL)
+
+ALTER TABLE student
+RENAME TO student_details;
+
+
+-- STEP 20 :- DISPLAY RENAMED TABLE (DQL)
+
+SELECT * FROM student_details;
+
+
+-- STEP 21 :- TRUNCATE TABLE (DDL)
+
+TRUNCATE TABLE student_details;
+
+
+-- STEP 22 :- DISPLAY EMPTY TABLE (DQL)
+
+SELECT * FROM student_details;
+
+
+-- STEP 23 :- DROP TABLE (DDL)
+
+DROP TABLE student_details;
+
+
 
 -- =====================================================
 -- END OF EMPLOYEE TABLE PRACTICE
