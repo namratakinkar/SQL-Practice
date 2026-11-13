@@ -66,30 +66,30 @@
 
 -- -- Example 1: SCHOOL TABLE
 
--- CREATE TABLE school (
---     school_id INT,
---     school_name VARCHAR(50),
---     city VARCHAR(50)
--- );
+CREATE TABLE school (
+    school_id INT,
+    school_name VARCHAR(50),
+    city VARCHAR(50)
+);
 
--- ALTER TABLE school
--- ADD COLUMN pincode INT;
+ALTER TABLE school
+ADD COLUMN pincode INT;
 
--- ALTER TABLE school
--- RENAME COLUMN city TO school_city;
+ALTER TABLE school
+RENAME COLUMN city TO school_city;
 
--- ALTER TABLE school
--- ALTER COLUMN school_name TYPE VARCHAR(100);
+ALTER TABLE school
+ALTER COLUMN school_name TYPE VARCHAR(100);
 
--- ALTER TABLE school
--- DROP COLUMN pincode;
+ALTER TABLE school
+DROP COLUMN pincode;
 
--- ALTER TABLE school
--- RENAME TO school_details;
+ALTER TABLE school
+RENAME TO school_details;
 
--- TRUNCATE TABLE school_details;
+TRUNCATE TABLE school_details;
 
--- DROP TABLE school_details;
+DROP TABLE school_details;
 
 -- _____________________________________________________________________________________________
 
@@ -97,32 +97,62 @@
 
 -- -- Example 2: STUDENT TABLE
 
--- CREATE TABLE student (
---     student_id INT,
---     student_name VARCHAR(50),
---     course VARCHAR(50)
--- );
+CREATE TABLE student (
+    student_id INT,
+    student_name VARCHAR(50),
+    course VARCHAR(50)
+);
 
--- ALTER TABLE student
--- ADD COLUMN age INT;
+ALTER TABLE student
+ADD COLUMN age INT;
 
--- ALTER TABLE student
--- RENAME COLUMN course TO course_name;
+ALTER TABLE student
+RENAME COLUMN course TO course_name;
 
--- ALTER TABLE student
--- ALTER COLUMN student_name TYPE VARCHAR(100);
+ALTER TABLE student
+ALTER COLUMN student_name TYPE VARCHAR(100);
 
--- ALTER TABLE student
--- DROP COLUMN age;
+ALTER TABLE student
+DROP COLUMN age;
 
--- ALTER TABLE student
--- RENAME TO student_details;
+ALTER TABLE student
+RENAME TO student_details;
 
--- TRUNCATE TABLE student_details;
+TRUNCATE TABLE student_details;
 
--- DROP TABLE student_details;
+DROP TABLE student_details;
 
 -- ______________________________________________________________________________________________
+
+
+-- Example 3 :- TEACHER TABLE
+
+CREATE TABLE teacher(
+    teacher_id INT,
+    teacher_name VARCHAR(50),
+    subject  VARCHAR(50)
+);
+
+ALTER TABLE teacher
+ADD COLUMN city VARCHAR(50);
+
+ALTER TABLE teacher
+RENAME COLUMN subject to teacher_subject;
+
+ALTER TABLE teacher
+ALTER COLUMN teacher_name type VARCHAR(100);
+
+ALTER TABLE teacher
+DROP COLUMN city;
+
+ALTER TABLE teacher
+RENAME to teacher_details;
+
+TRUNCATE TABLE teacher_details;
+
+DROP TABLE teacher_details;
+
+-- ____________________________________________________________________________________________________
 
 
 
