@@ -220,3 +220,49 @@ WHERE book_id = 4;
 SELECT * FROM book;
 
 -- ________________________________________________________________________________________
+
+
+-- Example 8:- HOSPITAL TABLE
+
+INSERT INTO hospital(hospital_id, hospital_name, city)
+VALUES
+(1, 'City Hospital', 'Bhopal'),
+(2, 'Care Hospital', 'Pune'),
+(3, 'Life Hospital', 'Delhi'),
+(4, 'Health Hospital', 'Mumbai'),
+(5, 'Sun Hospital', 'Indore');
+
+UPDATE hospital
+SET city = 'Nagpur'
+WHERE hospital_id = 3;
+
+SELECT * FROM hospital;
+
+DELETE FROM hospital
+WHERE hospital_id = 4;
+
+
+_____________________________________________________________________________________________
+
+
+-- Example 9:- PRODUCT TABLE
+
+INSERT INTO product(product_id, product_name, category)
+VALUES
+(1, 'Laptop', 'Electronics'),
+(2, 'Mobile', 'Electronics'),
+(3, 'Chair', 'Furniture'),
+(4, 'Table', 'Furniture'),
+(5, 'Shoes', 'Fashion');
+
+UPDATE product
+SET category = 'Technology'
+WHERE product_id = 1;
+
+SELECT * FROM product;
+
+DELETE FROM product
+WHERE product_id = 3;
+
+
+____________________________________________________________________________________________
