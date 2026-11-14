@@ -243,7 +243,7 @@ TRUNCATE TABLE customer_details;
 
 DROP TABLE customer_details;
 
-_________________________________________________________________________________________________
+-- _________________________________________________________________________________________________
 
 
 --  Example 7 :- BANK TABLE
@@ -275,3 +275,35 @@ TRUNCATE TABLE book_details;
 DROP TABLE book_details;
 
 -- ______________________________________________________________________________________________
+
+
+
+-- Example 8: HOSPITAL TABLE
+
+CREATE TABLE hospital (
+    hospital_id INT,
+    hospital_name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+ALTER TABLE hospital
+ADD COLUMN beds INT;
+
+ALTER TABLE hospital
+RENAME COLUMN city TO hospital_city;
+
+ALTER TABLE hospital
+ALTER COLUMN hospital_name TYPE VARCHAR(100);
+
+ALTER TABLE hospital
+DROP COLUMN beds;
+
+ALTER TABLE hospital
+RENAME TO hospital_details;
+
+TRUNCATE TABLE hospital_details;
+
+DROP TABLE hospital_details;
+
+
+-- _______________________________________________________________________________________________
