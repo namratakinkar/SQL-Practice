@@ -215,3 +215,63 @@ DROP TABLE employee_details;
 -- ________________________________________________________________________________________________
 
 
+-- Example 6 :- CUSTOMER TABLE
+
+
+CREATE TABLE customer(
+    customer_id INT,
+    customer_name VARCHAR(50),
+     city VARCHAR(50)
+);
+
+ALTER TABLE customer
+ADD COLUMN email VARCHAR(100);
+
+ALTER TABLE customer
+RENAME COLUMN city TO customer_city;
+
+ALTER TABLE customer
+ALTER COLUMN customer_name TYPE VARCHAR(100);
+
+ALTER TABLE customer
+DROP COLUMN email;
+
+ALTER TABLE customer
+RENAME TO customer_details;
+
+TRUNCATE TABLE customer_details;
+
+DROP TABLE customer_details;
+
+_________________________________________________________________________________________________
+
+
+--  Example 7 :- BANK TABLE
+
+
+CREATE TABLE book(
+   book_id INT,
+   book_name VARCHAR(50),
+   author VARCHAR(50)
+);
+
+ALTER TABLE book
+ADD COLUMN price INT;
+
+ALTER TABLE book
+RENAME COLUMN author TO book_author;
+
+ALTER TABLE book
+ALTER COLUMN book_name TYPE VARCHAR(100);
+
+ALTER TABLE book
+DROP COLUMN price;
+
+ALTER TABLE book
+RENAME TO book_details;
+
+TRUNCATE TABLE book_details;
+
+DROP TABLE book_details;
+
+-- ______________________________________________________________________________________________
