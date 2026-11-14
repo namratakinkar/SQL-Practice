@@ -546,6 +546,137 @@ SELECT * FROM school_details;
 
 DROP TABLE school_details;
 
+-- _________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 5 :- BANK TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL)
+
+CREATE TABLE bank(
+    account_id INT,
+    customer_name VARCHAR(50),
+    bank_name VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 3 :- INSERT DATA (DML)
+
+INSERT INTO bank(account_id, customer_name, bank_name)
+VALUES
+(1, 'Radhika', 'BOB'),
+(2, 'Neharika', 'SBI'),
+(3, 'Sakshi', 'HDFC'),
+(4, 'Siya', 'ICICI');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 5 :- UPDATE DATA (DML)
+
+UPDATE bank
+SET bank_name = 'BOB'
+WHERE account_id = 3;
+
+
+-- STEP 6 :- DISPLAY UPDATED DATA (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 7 :- DELETE DATA (DML)
+
+DELETE FROM bank
+WHERE account_id = 3;
+
+
+-- STEP 8 :- DISPLAY REMAINING DATA (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 9 :- ADD COLUMN (DDL)
+
+ALTER TABLE bank
+ADD COLUMN branch VARCHAR(100);
+
+
+-- STEP 10 :- DISPLAY TABLE WITH NEW COLUMN (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 11 :- RENAME COLUMN (DDL)
+
+ALTER TABLE bank
+RENAME COLUMN bank_name TO bank;
+
+
+-- STEP 12 :- DISPLAY RENAMED COLUMN (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 13 :- ALTER COLUMN TYPE (DDL)
+
+ALTER TABLE bank
+ALTER COLUMN customer_name TYPE VARCHAR(100);
+
+
+-- STEP 14 :- DISPLAY UPDATED TABLE (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 15 :- DROP COLUMN (DDL)
+
+ALTER TABLE bank
+DROP COLUMN branch;
+
+
+-- STEP 16 :- DISPLAY TABLE (DQL)
+
+SELECT * FROM bank;
+
+
+-- STEP 17 :- RENAME TABLE (DDL)
+
+ALTER TABLE bank
+RENAME TO bank_details;
+
+
+-- STEP 18 :- DISPLAY RENAMED TABLE (DQL)
+
+SELECT * FROM bank_details;
+
+
+-- STEP 19 :- TRUNCATE TABLE (DDL)
+
+TRUNCATE TABLE bank_details;
+
+
+-- STEP 20 :- DISPLAY EMPTY TABLE (DQL)
+
+SELECT * FROM bank_details;
+
+
+-- STEP 21 :- DROP TABLE (DDL)
+
+DROP TABLE bank_details;
+
+
 
 
 -- =====================================================
