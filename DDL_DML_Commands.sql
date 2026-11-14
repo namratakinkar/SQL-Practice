@@ -676,6 +676,149 @@ SELECT * FROM bank_details;
 
 DROP TABLE bank_details;
 
+-- _____________________________________________________________________________________________________
+
+
+
+-- =====================================================
+-- Example 6 :- PRODUCT TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL)
+
+CREATE TABLE product(
+    product_id INT,
+    product_name VARCHAR(50),
+    category VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 3 :- INSERT DATA (DML)
+
+INSERT INTO product(product_id, product_name, category)
+VALUES
+(1, 'Laptop', 'Electronics'),
+(2, 'Mobile', 'Electronics'),
+(3, 'Chair', 'Furniture'),
+(4, 'Table', 'Furniture'),
+(5, 'Shoes', 'Fashion');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 5 :- UPDATE DATA (DML)
+
+UPDATE product
+SET category = 'Technology'
+WHERE product_id = 1;
+
+
+-- STEP 6 :- DISPLAY UPDATED DATA (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 7 :- DELETE DATA (DML)
+
+DELETE FROM product
+WHERE product_id = 3;
+
+
+-- STEP 8 :- DISPLAY REMAINING DATA (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 9 :- ADD COLUMN (DDL)
+
+ALTER TABLE product
+ADD COLUMN price INT;
+
+
+-- STEP 10 :- DISPLAY TABLE WITH NEW COLUMN (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 11 :- UPDATE PRODUCT PRICE (DML)
+
+UPDATE product
+SET price = 25000
+WHERE product_id = 1;
+
+
+-- STEP 12 :- DISPLAY UPDATED PRODUCT PRICE (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 13 :- RENAME COLUMN (DDL)
+
+ALTER TABLE product
+RENAME COLUMN category TO product_category;
+
+
+-- STEP 14 :- DISPLAY RENAMED COLUMN (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 15 :- ALTER COLUMN TYPE (DDL)
+
+ALTER TABLE product
+ALTER COLUMN product_name TYPE VARCHAR(100);
+
+
+-- STEP 16 :- DISPLAY UPDATED TABLE (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 17 :- DROP COLUMN (DDL)
+
+ALTER TABLE product
+DROP COLUMN price;
+
+
+-- STEP 18 :- DISPLAY TABLE (DQL)
+
+SELECT * FROM product;
+
+
+-- STEP 19 :- RENAME TABLE (DDL)
+
+ALTER TABLE product
+RENAME TO product_details;
+
+
+-- STEP 20 :- DISPLAY RENAMED TABLE (DQL)
+
+SELECT * FROM product_details;
+
+
+-- STEP 21 :- TRUNCATE TABLE (DDL)
+
+TRUNCATE TABLE product_details;
+
+
+-- STEP 22 :- DISPLAY EMPTY TABLE (DQL)
+
+SELECT * FROM product_details;
+
+
+-- STEP 23 :- DROP TABLE (DDL)
+
+DROP TABLE product_details;
 
 
 
