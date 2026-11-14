@@ -242,7 +242,7 @@ DELETE FROM hospital
 WHERE hospital_id = 4;
 
 
-_____________________________________________________________________________________________
+-- _____________________________________________________________________________________________
 
 
 -- Example 9:- PRODUCT TABLE
@@ -265,4 +265,30 @@ DELETE FROM product
 WHERE product_id = 3;
 
 
-____________________________________________________________________________________________
+-- ____________________________________________________________________________________________
+
+
+-- Example 10: BANK TABLE
+
+INSERT INTO bank (account_id, customer_name, bank_name)
+VALUES
+(1, 'Rahul', 'SBI'),
+(2, 'Amit', 'BOB'),
+(3, 'Neha', 'HDFC'),
+(4, 'Rohit', 'ICICI'),
+(5, 'Priya', 'SBI');
+
+SELECT * FROM bank;
+
+UPDATE bank
+SET bank_name = 'PNB'
+WHERE account_id = 3;
+
+SELECT * FROM bank;
+
+DELETE FROM bank
+WHERE account_id = 2;
+
+SELECT * FROM bank;
+
+-- ______________________________________________________________________________________________
