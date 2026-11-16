@@ -371,3 +371,34 @@ DROP TABLE bank_details;
 
 
 -- _____________________________________________________________________________________________
+
+
+-- Example 11 :- PRODUCT TABLE
+
+CREATE TABLE product (
+    product_id INT,
+    product_name VARCHAR(50),
+    price INT,
+    category VARCHAR(50)
+);
+
+ALTER TABLE product
+ADD COLUMN brand VARCHAR(50);
+
+ALTER TABLE product
+RENAME COLUMN brand TO company_name;
+
+ALTER TABLE product
+ALTER COLUMN product_name TYPE VARCHAR(100);
+
+ALTER TABLE product
+DROP COLUMN company_name;
+
+ALTER TABLE product
+RENAME TO product_details;
+
+TRUNCATE TABLE product_details;
+
+DROP TABLE product_details;
+
+-- _____________________________________________________________________________________________
