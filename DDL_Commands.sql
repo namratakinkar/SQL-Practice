@@ -307,3 +307,67 @@ DROP TABLE hospital_details;
 
 
 -- _______________________________________________________________________________________________
+
+
+
+-- Example 9: PRODUCT TABLE
+
+CREATE TABLE product (
+    product_id INT,
+    product_name VARCHAR(50),
+    category VARCHAR(50)
+);
+
+ALTER TABLE product
+ADD COLUMN price INT;
+
+ALTER TABLE product
+RENAME COLUMN category TO category_name;
+
+ALTER TABLE product
+ALTER COLUMN product_name TYPE VARCHAR(100);
+
+ALTER TABLE product
+DROP COLUMN price;
+
+ALTER TABLE product
+RENAME TO product_details;
+
+TRUNCATE TABLE product_details;
+
+DROP TABLE product_details;
+
+
+-- ______________________________________________________________________________________________
+
+
+
+-- Example 10: BANK TABLE
+
+CREATE TABLE bank (
+    account_id INT,
+    customer_name VARCHAR(50),
+    bank_name VARCHAR(50)
+);
+
+ALTER TABLE bank
+ADD COLUMN branch VARCHAR(50);
+
+ALTER TABLE bank
+RENAME COLUMN bank_name TO bank_name_details;
+
+ALTER TABLE bank
+ALTER COLUMN customer_name TYPE VARCHAR(100);
+
+ALTER TABLE bank
+DROP COLUMN branch;
+
+ALTER TABLE bank
+RENAME TO bank_details;
+
+TRUNCATE TABLE bank_details;
+
+DROP TABLE bank_details;
+
+
+-- _____________________________________________________________________________________________
