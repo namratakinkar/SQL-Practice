@@ -820,6 +820,136 @@ SELECT * FROM product_details;
 
 DROP TABLE product_details;
 
+-- ____________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 7 :- HOSPITAL TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL)
+
+CREATE TABLE hospital(
+    patient_id INT,
+    patient_name VARCHAR(50),
+    doctor_name VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 3 :- INSERT DATA (DML)
+
+INSERT INTO hospital(patient_id, patient_name, doctor_name)
+VALUES
+(1, 'Rahul', 'Dr. Sharma'),
+(2, 'Amit', 'Dr. Verma'),
+(3, 'Neha', 'Dr. Gupta'),
+(4, 'Priya', 'Dr. Singh');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 5 :- UPDATE DATA (DML)
+
+UPDATE hospital
+SET doctor_name = 'Dr. Mehta'
+WHERE patient_id = 3;
+
+
+-- STEP 6 :- DISPLAY UPDATED DATA (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 7 :- DELETE DATA (DML)
+
+DELETE FROM hospital
+WHERE patient_id = 2;
+
+
+-- STEP 8 :- DISPLAY REMAINING DATA (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 9 :- ADD COLUMN (DDL)
+
+ALTER TABLE hospital
+ADD COLUMN disease VARCHAR(100);
+
+
+-- STEP 10 :- DISPLAY TABLE WITH NEW COLUMN (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 11 :- RENAME COLUMN (DDL)
+
+ALTER TABLE hospital
+RENAME COLUMN doctor_name TO assigned_doctor;
+
+
+-- STEP 12 :- DISPLAY RENAMED COLUMN (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 13 :- ALTER COLUMN TYPE (DDL)
+
+ALTER TABLE hospital
+ALTER COLUMN patient_name TYPE VARCHAR(100);
+
+
+-- STEP 14 :- DISPLAY UPDATED TABLE (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 15 :- DROP COLUMN (DDL)
+
+ALTER TABLE hospital
+DROP COLUMN disease;
+
+
+-- STEP 16 :- DISPLAY TABLE (DQL)
+
+SELECT * FROM hospital;
+
+
+-- STEP 17 :- RENAME TABLE (DDL)
+
+ALTER TABLE hospital
+RENAME TO hospital_records;
+
+
+-- STEP 18 :- DISPLAY RENAMED TABLE (DQL)
+
+SELECT * FROM hospital_records;
+
+
+-- STEP 19 :- TRUNCATE TABLE (DDL)
+
+TRUNCATE TABLE hospital_records;
+
+
+-- STEP 20 :- DISPLAY EMPTY TABLE (DQL)
+
+SELECT * FROM hospital_records;
+
+
+-- STEP 21 :- DROP TABLE (DDL)
+
+DROP TABLE hospital_records;
+
 
 
 -- =====================================================
