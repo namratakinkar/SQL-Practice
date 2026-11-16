@@ -292,3 +292,55 @@ WHERE account_id = 2;
 SELECT * FROM bank;
 
 -- ______________________________________________________________________________________________
+
+
+-- Example 11: EMPLOYEE TABLE
+
+INSERT INTO employee (employee_id, employee_name, salary, department)
+VALUES
+(1, 'Ankit', 25000, 'HR'),
+(2, 'Sneha', 30000, 'IT'),
+(3, 'Vikas', 28000, 'Sales'),
+(4, 'Pooja', 35000, 'Finance'),
+(5, 'Karan', 32000, 'IT');
+
+SELECT * FROM employee;
+
+UPDATE employee
+SET salary = 40000
+WHERE employee_id = 3;
+
+SELECT * FROM employee;
+
+DELETE FROM employee
+WHERE employee_id = 5;
+
+SELECT * FROM employee;
+
+-- ______________________________________________________________________________________________
+
+
+-- Example 12: PRODUCT TABLE
+
+INSERT INTO product (product_id, product_name, price, category)
+VALUES
+(1, 'Laptop', 45000, 'Electronics'),
+(2, 'Mouse', 500, 'Accessories'),
+(3, 'Keyboard', 1200, 'Accessories'),
+(4, 'Mobile', 20000, 'Electronics'),
+(5, 'Headphone', 1500, 'Accessories');
+
+SELECT * FROM product;
+
+UPDATE product
+SET price = 550
+WHERE product_id = 2;
+
+SELECT * FROM product;
+
+DELETE FROM product
+WHERE product_id = 4;
+
+SELECT * FROM product;
+
+-- _____________________________________________________________________________________________
