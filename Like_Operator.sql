@@ -511,3 +511,124 @@ WHERE college_name LIKE '%abi%';
 -- ________________________________________________________________________
 
 
+--  ================================
+--    Example 5 :-
+-- =====================================
+-- 1. CREATE TABLE (DDL)
+-- =====================================
+
+CREATE TABLE library (
+    book_id INT,
+    book_name VARCHAR(50),
+    author_name VARCHAR(50)
+);
+
+
+-- =====================================
+-- 2. INSERT DATA (DML)
+-- =====================================
+
+INSERT INTO library (book_id, book_name, author_name)
+VALUES
+(1, 'Apple Story', 'Rahul Sharma'),
+(2, 'Amazing World', 'Amit Verma'),
+(3, 'Adventure Book', 'Neha Gupta'),
+(4, 'Animal Kingdom', 'Priya Singh'),
+(5, 'Art of Coding', 'Ankit Jain'),
+(6, 'Python Basics', 'Rohit Mehta'),
+(7, 'Java Guide', 'Kavita Sharma'),
+(8, 'Science World', 'Vikas Patel'),
+(9, 'History Book', 'Pooja Verma'),
+(10, 'Geography Guide', 'Nisha Gupta'),
+(11, 'Abacus Learning', 'Abdul Khan'),
+(12, 'Abbreviation Guide', 'Abbas Ali'),
+(13, 'Kabir Dohe', 'Kabir Das'),
+(14, 'Zabir Stories', 'Zabir Khan'),
+(15, 'Shabana Diary', 'Shabana Khan');
+
+
+-- =====================================
+-- 3. SELECT ALL DATA (DQL)
+-- =====================================
+
+SELECT * FROM library;
+
+
+-- =====================================
+-- 4. LIKE OPERATOR (A%)
+-- Book names starting with A
+-- =====================================
+
+-- Example 1
+SELECT * FROM library
+WHERE book_name LIKE 'A%';
+
+-- Example 2
+SELECT * FROM library
+WHERE book_name LIKE 'Ap%';
+
+-- Example 3
+SELECT * FROM library
+WHERE book_name LIKE 'Ab%';
+
+-- Example 4
+SELECT * FROM library
+WHERE book_name LIKE 'Ad%';
+
+-- Example 5
+SELECT * FROM library
+WHERE book_name LIKE 'An%';
+
+
+-- =====================================
+-- 5. LIKE OPERATOR (%e)
+-- Book names ending with e
+-- =====================================
+
+-- Example 1
+SELECT * FROM library
+WHERE book_name LIKE '%e';
+
+-- Example 2
+SELECT * FROM library
+WHERE book_name LIKE '%de';
+
+-- Example 3
+SELECT * FROM library
+WHERE book_name LIKE '%ide';
+
+-- Example 4
+SELECT * FROM library
+WHERE book_name LIKE '%Guide';
+
+-- Example 5
+SELECT * FROM library
+WHERE book_name LIKE '%World';
+
+
+-- =====================================
+-- 6. LIKE OPERATOR (%ab%)
+-- Book names containing ab
+-- =====================================
+
+-- Example 1
+SELECT * FROM library
+WHERE book_name LIKE '%ab%';
+
+-- Example 2
+SELECT * FROM library
+WHERE book_name LIKE 'Ab%';
+
+-- Example 3
+SELECT * FROM library
+WHERE book_name LIKE '%ab';
+
+-- Example 4
+SELECT * FROM library
+WHERE book_name LIKE '%aba%';
+
+-- Example 5
+SELECT * FROM library
+WHERE book_name LIKE '%abi%';
+
+-- ________________________________________________________________________
