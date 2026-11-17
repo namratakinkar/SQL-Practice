@@ -950,8 +950,134 @@ SELECT * FROM hospital_records;
 
 DROP TABLE hospital_records;
 
+-- ____________________________________________________________________________________________________
 
 
--- =====================================================
--- END OF EMPLOYEE TABLE PRACTICE
--- =====================================================
+- =====================================================
+-- Example 8 :- LIBRARY TABLE
+-- DDL, DML AND DQL COMMANDS
+-- ====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL)
+
+CREATE TABLE library(
+    book_id INT,
+    book_name VARCHAR(50),
+    author_name VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 3 :- INSERT DATA (DML)
+
+INSERT INTO library(book_id, book_name, author_name)
+VALUES
+(1, 'Python Basics', 'Rahul Sharma'),
+(2, 'SQL Guide', 'Amit Verma'),
+(3, 'Java Programming', 'Neha Gupta'),
+(4, 'Data Science', 'Priya Singh');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 5 :- UPDATE DATA (DML)
+
+UPDATE library
+SET author_name = 'Rohit Mehta'
+WHERE book_id = 3;
+
+
+-- STEP 6 :- DISPLAY UPDATED DATA (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 7 :- DELETE DATA (DML)
+
+DELETE FROM library
+WHERE book_id = 2;
+
+
+-- STEP 8 :- DISPLAY REMAINING DATA (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 9 :- ADD COLUMN (DDL)
+
+ALTER TABLE library
+ADD COLUMN price INT;
+
+
+-- STEP 10 :- DISPLAY TABLE WITH NEW COLUMN (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 11 :- RENAME COLUMN (DDL)
+
+ALTER TABLE library
+RENAME COLUMN author_name TO writer_name;
+
+
+-- STEP 12 :- DISPLAY RENAMED COLUMN (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 13 :- ALTER COLUMN TYPE (DDL)
+
+ALTER TABLE library
+ALTER COLUMN book_name TYPE VARCHAR(100);
+
+
+-- STEP 14 :- DISPLAY UPDATED TABLE (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 15 :- DROP COLUMN (DDL)
+
+ALTER TABLE library
+DROP COLUMN price;
+
+
+-- STEP 16 :- DISPLAY TABLE (DQL)
+
+SELECT * FROM library;
+
+
+-- STEP 17 :- RENAME TABLE (DDL)
+
+ALTER TABLE library
+RENAME TO library_books;
+
+
+-- STEP 18 :- DISPLAY RENAMED TABLE (DQL)
+
+SELECT * FROM library_books;
+
+
+-- STEP 19 :- TRUNCATE TABLE (DDL)
+
+TRUNCATE TABLE library_books;
+
+
+-- STEP 20 :- DISPLAY EMPTY TABLE (DQL)
+
+SELECT * FROM library_books;
+
+
+-- STEP 21 :- DROP TABLE (DDL)
+
+DROP TABLE library_books;
+
+-- ______________________________________________________________________________________________________
