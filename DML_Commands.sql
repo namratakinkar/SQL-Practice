@@ -344,3 +344,53 @@ WHERE product_id = 4;
 SELECT * FROM product;
 
 -- _____________________________________________________________________________________________
+
+-- Example 13: LIBRARY TABLE
+
+INSERT INTO library (book_id, book_name, author_name)
+VALUES
+(1, 'Python Basics', 'Rahul Sharma'),
+(2, 'SQL Guide', 'Amit Verma'),
+(3, 'Java Programming', 'Neha Gupta'),
+(4, 'Data Science', 'Priya Singh'),
+(5, 'Web Development', 'Rohit Mehta');
+
+SELECT * FROM library;
+
+UPDATE library
+SET author_name = 'Rohit Mehta'
+WHERE book_id = 3;
+
+SELECT * FROM library;
+
+DELETE FROM library
+WHERE book_id = 4;
+
+SELECT * FROM library;
+
+-- _______________________________________________________________________________________________
+
+-- Example 14: COLLEGE TABLE
+
+INSERT INTO college (college_id, college_name, city, course)
+VALUES
+(1, 'ABC College', 'Bhopal', 'BCA'),
+(2, 'XYZ College', 'Indore', 'BBA'),
+(3, 'PQR College', 'Delhi', 'BTech'),
+(4, 'LMN College', 'Mumbai', 'MBA'),
+(5, 'DEF College', 'Jaipur', 'MCA');
+
+SELECT * FROM college;
+
+UPDATE college
+SET course = 'MCA'
+WHERE college_id = 3;
+
+SELECT * FROM college;
+
+DELETE FROM college
+WHERE college_id = 4;
+
+SELECT * FROM college;
+
+-- ________________________________________________________________________________________________
