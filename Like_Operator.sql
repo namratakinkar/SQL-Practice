@@ -387,3 +387,127 @@ SELECT * FROM product
 WHERE product_name LIKE '%board%';
 
 -- ________________________________________________________________________
+
+--  ================================
+--    Example 4 :-
+-- =====================================
+-- 1. CREATE TABLE (DDL)
+-- =====================================
+
+CREATE TABLE college (
+    college_id INT,
+    college_name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+
+-- =====================================
+-- 2. INSERT DATA (DML)
+-- =====================================
+
+INSERT INTO college (college_id, college_name, city)
+VALUES
+(1, 'ABC College', 'Bhopal'),
+(2, 'Apex College', 'Indore'),
+(3, 'Amity College', 'Delhi'),
+(4, 'Aryan College', 'Mumbai'),
+(5, 'Anand College', 'Jaipur'),
+(6, 'Modern College', 'Pune'),
+(7, 'National College', 'Bhopal'),
+(8, 'Royal College', 'Indore'),
+(9, 'Global College', 'Delhi'),
+(10, 'Sunrise College', 'Mumbai'),
+(11, 'Abbas College', 'Bhopal'),
+(12, 'Abdul College', 'Jaipur'),
+(13, 'Kabir College', 'Pune'),
+(14, 'Zabir College', 'Delhi'),
+(15, 'Shabana College', 'Mumbai');
+
+
+-- =====================================
+-- 3. SELECT ALL DATA (DQL)
+-- =====================================
+
+SELECT * FROM college;
+
+
+-- =====================================
+-- 4. LIKE OPERATOR (A%)
+-- College names starting with A
+-- =====================================
+
+-- Example 1
+SELECT * FROM college
+WHERE college_name LIKE 'A%';
+
+-- Example 2
+SELECT * FROM college
+WHERE college_name LIKE 'Ab%';
+
+-- Example 3
+SELECT * FROM college
+WHERE college_name LIKE 'Ap%';
+
+-- Example 4
+SELECT * FROM college
+WHERE college_name LIKE 'Am%';
+
+-- Example 5
+SELECT * FROM college
+WHERE college_name LIKE 'Ar%';
+
+
+-- =====================================
+-- 5. LIKE OPERATOR (%e)
+-- College names ending with e
+-- =====================================
+
+-- Example 1
+SELECT * FROM college
+WHERE college_name LIKE '%e';
+
+-- Example 2
+SELECT * FROM college
+WHERE college_name LIKE '%ge';
+
+-- Example 3
+SELECT * FROM college
+WHERE college_name LIKE '%lege';
+
+-- Example 4
+SELECT * FROM college
+WHERE college_name LIKE '%College';
+
+-- Example 5
+SELECT * FROM college
+WHERE college_name LIKE '%rise';
+
+
+-- =====================================
+-- 6. LIKE OPERATOR (%ab%)
+-- College names containing ab
+-- =====================================
+
+-- Example 1
+SELECT * FROM college
+WHERE college_name LIKE '%ab%';
+
+-- Example 2
+SELECT * FROM college
+WHERE college_name LIKE 'Ab%';
+
+-- Example 3
+SELECT * FROM college
+WHERE college_name LIKE '%ab';
+
+-- Example 4
+SELECT * FROM college
+WHERE college_name LIKE '%aba%';
+
+-- Example 5
+SELECT * FROM college
+WHERE college_name LIKE '%abi%';
+
+-- ________________________________________________________________________
+
+
