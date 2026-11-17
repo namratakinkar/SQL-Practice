@@ -402,3 +402,63 @@ TRUNCATE TABLE product_details;
 DROP TABLE product_details;
 
 -- _____________________________________________________________________________________________
+
+-- Example 12 :- COLLEGE TABLE
+
+CREATE TABLE college (
+    college_id INT,
+    college_name VARCHAR(50),
+    city VARCHAR(50),
+    course VARCHAR(50)
+);
+
+ALTER TABLE college
+ADD COLUMN fees INT;
+
+ALTER TABLE college
+RENAME COLUMN city TO location;
+
+ALTER TABLE college
+ALTER COLUMN college_name TYPE VARCHAR(100);
+
+ALTER TABLE college
+DROP COLUMN fees;
+
+ALTER TABLE college
+RENAME TO college_details;
+
+TRUNCATE TABLE college_details;
+
+DROP TABLE college_details;
+
+-- ______________________________________________________________________________________________
+
+-- Example 13 :- LIBRARY TABLE
+
+CREATE TABLE library (
+    book_id INT,
+    book_name VARCHAR(50),
+    author_name VARCHAR(50),
+    price INT
+);
+
+ALTER TABLE library
+ADD COLUMN publication_year INT;
+
+ALTER TABLE library
+RENAME COLUMN author_name TO writer_name;
+
+ALTER TABLE library
+ALTER COLUMN book_name TYPE VARCHAR(100);
+
+ALTER TABLE library
+DROP COLUMN publication_year;
+
+ALTER TABLE library
+RENAME TO library_books;
+
+TRUNCATE TABLE library_books;
+
+DROP TABLE library_books;
+
+-- ________________________________________________________________________________________________
