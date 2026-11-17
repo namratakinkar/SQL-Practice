@@ -462,3 +462,33 @@ TRUNCATE TABLE library_books;
 DROP TABLE library_books;
 
 -- ________________________________________________________________________________________________
+
+-- Example 14 :- HOTEL TABLE
+
+CREATE TABLE hotel (
+    hotel_id INT,
+    hotel_name VARCHAR(50),
+    city VARCHAR(50),
+    room_price INT
+);
+
+ALTER TABLE hotel
+ADD COLUMN hotel_type VARCHAR(50);
+
+ALTER TABLE hotel
+RENAME COLUMN city TO location;
+
+ALTER TABLE hotel
+ALTER COLUMN hotel_name TYPE VARCHAR(100);
+
+ALTER TABLE hotel
+DROP COLUMN hotel_type;
+
+ALTER TABLE hotel
+RENAME TO hotel_details;
+
+TRUNCATE TABLE hotel_details;
+
+DROP TABLE hotel_details;
+
+-- __________________________________________________________________________________________________
