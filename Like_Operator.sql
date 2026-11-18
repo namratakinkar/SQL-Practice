@@ -632,3 +632,115 @@ SELECT * FROM library
 WHERE book_name LIKE '%abi%';
 
 -- ________________________________________________________________________
+
+
+-- =====================================================
+-- Example 6 :- INSTITUTE TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE institute(
+    institute_id INT,
+    institute_name VARCHAR(50),
+    city VARCHAR(50),
+    course_name VARCHAR(50),
+    fees INT,
+    duration VARCHAR(20)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM institute;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO institute(institute_id, institute_name, city, course_name, fees, duration)
+VALUES
+(1, 'Yunova Institute', 'Bhopal', 'Python', 8000, '3 Months'),
+(2, 'Tech Academy', 'Indore', 'Web Development', 12000, '6 Months'),
+(3, 'Bright Institute', 'Jabalpur', 'Tally', 5000, '2 Months'),
+(4, 'Digital Learning Center', 'Delhi', 'Graphic Design', 7000, '4 Months'),
+(5, 'Future Skills Academy', 'Mumbai', 'Data Science', 15000, '8 Months'),
+(6, 'Smart Computer Institute', 'Pune', 'Java', 10000, '5 Months'),
+(7, 'Global Education Center', 'Jaipur', 'C Programming', 4000, '2 Months'),
+(8, 'Creative Learning Institute', 'Lucknow', 'Digital Marketing', 9000, '3 Months'),
+(9, 'Advanced IT Academy', 'Nagpur', 'SQL Database', 6000, '3 Months'),
+(10, 'Excel Training Center', 'Gwalior', 'Advanced Excel', 3500, '1 Month'),
+(11, 'NextGen Institute', 'Chennai', 'Full Stack Development', 18000, '9 Months'),
+(12, 'Career Point Academy', 'Kolkata', 'JavaScript', 7500, '4 Months'),
+(13, 'Skill Development Center', 'Raipur', 'Python with Django', 11000, '5 Months'),
+(14, 'Modern Computer Academy', 'Surat', 'MS Office', 3000, '2 Months'),
+(15, 'Professional IT Institute', 'Hyderabad', 'Machine Learning', 20000, '10 Months');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM institute;
+
+
+-- =====================================================
+-- LIKE OPERATOR (A%) START WITH A
+-- =====================================================
+
+SELECT * FROM institute
+WHERE institute_name LIKE 'A%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE 'T%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE 'M%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE 'E%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE 'G%';
+
+
+-- =====================================================
+-- LIKE OPERATOR (%a) ENDS WITH A
+-- =====================================================
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%a';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%e';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%r';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%y';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%g';
+
+
+-- =====================================================
+-- LIKE OPERATOR (%ab%) CONTAINS CHARACTERS
+-- =====================================================
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%ti%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%rn%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%ll%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%oi%';
+
+SELECT * FROM institute
+WHERE institute_name LIKE '%ai%';
+
+-- _______________________________________________________________________________
+
