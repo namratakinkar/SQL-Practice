@@ -1241,3 +1241,164 @@ SELECT * FROM store_details;
 DROP TABLE store_details;
 
 -- _______________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 10 :- INSTITUTE TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE institute(
+    institute_id INT,
+    institute_name VARCHAR(50),
+    course_name VARCHAR(50),
+    city VARCHAR(50),
+    fees INT,
+    duration VARCHAR(20)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM institute;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO institute(institute_id, institute_name, course_name, city, fees, duration)
+VALUES
+(1, 'Yunova Institute', 'Python', 'Bhopal', 8000, '3 Months'),
+(2, 'Tech Academy', 'Web Development', 'Indore', 12000, '6 Months'),
+(3, 'Bright Institute', 'Tally', 'Jabalpur', 5000, '2 Months'),
+(4, 'Digital Learning Center', 'Graphic Design', 'Delhi', 7000, '4 Months'),
+(5, 'Future Skills Academy', 'Data Science', 'Mumbai', 15000, '8 Months');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM institute;
+
+
+-- STEP 5 :- UPDATE CITY (DML COMMAND)
+
+UPDATE institute
+SET city = 'Nagpur'
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+
+-- STEP 6 :- UPDATE COURSE NAME (DML COMMAND)
+
+UPDATE institute
+SET course_name = 'Video Editing'
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+
+-- STEP 7 :- UPDATE COURSE FEES (DML COMMAND)
+
+UPDATE institute
+SET fees = 6000
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+
+-- STEP 8 :- UPDATE COURSE DURATION (DML COMMAND)
+
+UPDATE institute
+SET duration = '3 Months'
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+
+-- STEP 9 :- DELETE INSTITUTE RECORD (DML COMMAND)
+
+DELETE FROM institute
+WHERE institute_id = 5;
+
+SELECT * FROM institute;
+
+
+-- STEP 10 :- DELETE ANOTHER INSTITUTE RECORD (DML COMMAND)
+
+DELETE FROM institute
+WHERE institute_id = 4;
+
+SELECT * FROM institute;
+
+
+-- STEP 11 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE institute
+ADD COLUMN trainer_name VARCHAR(50);
+
+SELECT * FROM institute;
+
+
+-- STEP 12 :- RENAME CITY COLUMN (DDL COMMAND)
+
+ALTER TABLE institute
+RENAME COLUMN city TO institute_city;
+
+SELECT * FROM institute;
+
+
+-- STEP 13 :- RENAME FEES COLUMN (DDL COMMAND)
+
+ALTER TABLE institute
+RENAME COLUMN fees TO course_fees;
+
+SELECT * FROM institute;
+
+
+-- STEP 14 :- RENAME DURATION COLUMN (DDL COMMAND)
+
+ALTER TABLE institute
+RENAME COLUMN duration TO course_duration;
+
+SELECT * FROM institute;
+
+
+-- STEP 15 :- CHANGE INSTITUTE_NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE institute
+ALTER COLUMN institute_name TYPE VARCHAR(100);
+
+SELECT * FROM institute;
+
+
+-- STEP 16 :- DROP TRAINER_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE institute
+DROP COLUMN trainer_name;
+
+SELECT * FROM institute;
+
+
+-- STEP 17 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE institute
+RENAME TO institute_details;
+
+SELECT * FROM institute_details;
+
+
+-- STEP 18 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE institute_details;
+
+SELECT * FROM institute_details;
+
+
+-- STEP 19 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE institute_details;
+
+-- _______________________________________________________________________________________________________
