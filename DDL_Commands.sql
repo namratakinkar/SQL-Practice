@@ -492,3 +492,41 @@ TRUNCATE TABLE hotel_details;
 DROP TABLE hotel_details;
 
 -- __________________________________________________________________________________________________
+
+-- Example 15 :- INSTITUTE TABLE
+
+CREATE TABLE institute(
+    institute_id INT,
+    institute_name VARCHAR(50),
+    course_name VARCHAR(50),
+    city VARCHAR(50),
+    fees INT,
+    duration VARCHAR(50)
+);
+
+ALTER TABLE institute
+ADD COLUMN trainer_name VARCHAR(50);
+
+ALTER TABLE institute
+RENAME COLUMN city TO institute_city;
+
+ALTER TABLE institute
+RENAME COLUMN fees TO course_fees;
+
+ALTER TABLE institute
+RENAME COLUMN duration TO course_duration;
+
+ALTER TABLE institute
+ALTER COLUMN institute_name TYPE VARCHAR(100);
+
+ALTER TABLE institute
+DROP COLUMN trainer_name;
+
+ALTER TABLE institute
+RENAME TO institute_details;
+
+TRUNCATE TABLE institute_details;
+
+DROP TABLE institute_details;
+
+-- ___________________________________________________________________________________________________
