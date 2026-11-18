@@ -744,3 +744,113 @@ WHERE institute_name LIKE '%ai%';
 
 -- _______________________________________________________________________________
 
+
+-- =====================================================
+-- Example 7 :- STORE TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE store(
+    store_id INT,
+    store_name VARCHAR(50),
+    city VARCHAR(50),
+    owner_name VARCHAR(50),
+    contact_number VARCHAR(15),
+    pincode INT
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM store;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO store(store_id, store_name, city, owner_name, contact_number, pincode)
+VALUES
+(1, 'Apex General Store', 'Bhopal', 'Rahul Sharma', '9876543210', 462001),
+(2, 'Tech Mart', 'Indore', 'Amit Verma', '9876543211', 452001),
+(3, 'Modern Store', 'Jabalpur', 'Neha Patel', '9876543212', 482001),
+(4, 'Evergreen Super Store', 'Delhi', 'Rohit Kumar', '9876543213', 110001),
+(5, 'Global Shopping Center', 'Mumbai', 'Priya Singh', '9876543214', 400001),
+(6, 'Royal General Store', 'Pune', 'Vikas Jain', '9876543215', 411001),
+(7, 'Smart Mart', 'Jaipur', 'Ankit Gupta', '9876543216', 302001),
+(8, 'Fresh Grocery Store', 'Lucknow', 'Pooja Verma', '9876543217', 226001),
+(9, 'City Departmental Store', 'Nagpur', 'Suresh Patel', '9876543218', 440001),
+(10, 'Elite Shopping Store', 'Gwalior', 'Karan Singh', '9876543219', 474001),
+(11, 'Green Valley Store', 'Chennai', 'Ravi Kumar', '9876543220', 600001),
+(12, 'Best Choice Store', 'Kolkata', 'Aman Khan', '9876543221', 700001),
+(13, 'Daily Needs Store', 'Raipur', 'Nisha Sharma', '9876543222', 492001),
+(14, 'Mega Mart', 'Surat', 'Deepak Shah', '9876543223', 395001),
+(15, 'Fashion World Store', 'Hyderabad', 'Simran Kaur', '9876543224', 500001);
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM store;
+
+
+-- =====================================================
+-- LIKE OPERATOR (A%) START WITH A
+-- =====================================================
+
+SELECT * FROM store
+WHERE store_name LIKE 'A%';
+
+SELECT * FROM store
+WHERE store_name LIKE 'T%';
+
+SELECT * FROM store
+WHERE store_name LIKE 'M%';
+
+SELECT * FROM store
+WHERE store_name LIKE 'E%';
+
+SELECT * FROM store
+WHERE store_name LIKE 'G%';
+
+
+-- =====================================================
+-- LIKE OPERATOR (%a) ENDS WITH A
+-- =====================================================
+
+SELECT * FROM store
+WHERE store_name LIKE '%a';
+
+SELECT * FROM store
+WHERE store_name LIKE '%e';
+
+SELECT * FROM store
+WHERE store_name LIKE '%r';
+
+SELECT * FROM store
+WHERE store_name LIKE '%y';
+
+SELECT * FROM store
+WHERE store_name LIKE '%t';
+
+
+-- =====================================================
+-- LIKE OPERATOR (%ab%) CONTAINS CHARACTERS
+-- =====================================================
+
+SELECT * FROM store
+WHERE store_name LIKE '%ar%';
+
+SELECT * FROM store
+WHERE store_name LIKE '%or%';
+
+SELECT * FROM store
+WHERE store_name LIKE '%et%';
+
+SELECT * FROM store
+WHERE store_name LIKE '%en%';
+
+SELECT * FROM store
+WHERE store_name LIKE '%al%';
+
+-- __________________________________________________________________________________________
