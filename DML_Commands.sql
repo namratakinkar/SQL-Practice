@@ -394,3 +394,52 @@ WHERE college_id = 4;
 SELECT * FROM college;
 
 -- ________________________________________________________________________________________________
+
+
+-- Example 15 :- INSTITUTE TABLE
+
+INSERT INTO institute(institute_id, institute_name, city, course_name, fees, duration)
+VALUES
+(1, 'Yunova Institute', 'Bhopal', 'Python', 8000, '3 Months'),
+(2, 'Tech Academy', 'Indore', 'Web Development', 12000, '6 Months'),
+(3, 'Bright Institute', 'Jabalpur', 'Tally', 5000, '2 Months'),
+(4, 'Digital Learning Center', 'Delhi', 'Graphic Design', 7000, '4 Months'),
+(5, 'Future Skills Academy', 'Mumbai', 'Data Science', 15000, '8 Months');
+
+SELECT * FROM institute;
+
+UPDATE institute
+SET city = 'Nagpur'
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+UPDATE institute
+SET course_name = 'Video Editing'
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+UPDATE institute
+SET fees = 6000
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+UPDATE institute
+SET duration = '3 Months'
+WHERE institute_id = 3;
+
+SELECT * FROM institute;
+
+DELETE FROM institute
+WHERE institute_id = 5;
+
+SELECT * FROM institute;
+
+DELETE FROM institute
+WHERE institute_id = 4;
+
+SELECT * FROM institute;
+
+-- ________________________________________________________________________________________________
