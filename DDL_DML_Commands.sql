@@ -1081,3 +1081,163 @@ SELECT * FROM library_books;
 DROP TABLE library_books;
 
 -- ______________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 9 :- STORE TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE store(
+    store_id INT,
+    store_name VARCHAR(50),
+    city VARCHAR(50),
+    owner_name VARCHAR(50),
+    contact_number VARCHAR(15)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM store;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO store(store_id, store_name, city, owner_name, contact_number)
+VALUES
+(1, 'Sharma General Store', 'Bhopal', 'Rahul Sharma', '9876543210'),
+(2, 'Fresh Mart', 'Indore', 'Amit Verma', '9876543211'),
+(3, 'City Super Store', 'Jabalpur', 'Neha Patel', '9876543212'),
+(4, 'Smart Shopping Center', 'Delhi', 'Rohit Kumar', '9876543213'),
+(5, 'Royal Departmental Store', 'Mumbai', 'Priya Singh', '9876543214');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM store;
+
+
+-- STEP 5 :- UPDATE CITY (DML COMMAND)
+
+UPDATE store
+SET city = 'Pune'
+WHERE store_id = 2;
+
+SELECT * FROM store;
+
+
+-- STEP 6 :- UPDATE OWNER NAME (DML COMMAND)
+
+UPDATE store
+SET owner_name = 'Gitanjali Patel'
+WHERE store_id = 4;
+
+SELECT * FROM store;
+
+
+-- STEP 7 :- UPDATE CONTACT NUMBER (DML COMMAND)
+
+UPDATE store
+SET contact_number = '7639451267'
+WHERE store_id = 5;
+
+SELECT * FROM store;
+
+
+-- STEP 8 :- UPDATE STORE NAME (DML COMMAND)
+
+UPDATE store
+SET store_name = 'Shilpa General Store'
+WHERE store_id = 3;
+
+SELECT * FROM store;
+
+
+-- STEP 9 :- DELETE STORE RECORD (DML COMMAND)
+
+DELETE FROM store
+WHERE store_id = 3;
+
+SELECT * FROM store;
+
+
+-- STEP 10 :- DELETE ANOTHER STORE RECORD (DML COMMAND)
+
+DELETE FROM store
+WHERE store_id = 5;
+
+SELECT * FROM store;
+
+
+-- STEP 11 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE store
+ADD COLUMN pincode INT;
+
+SELECT * FROM store;
+
+
+-- STEP 12 :- RENAME CITY COLUMN (DDL COMMAND)
+
+ALTER TABLE store
+RENAME COLUMN city TO store_city;
+
+SELECT * FROM store;
+
+
+-- STEP 13 :- RENAME OWNER_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE store
+RENAME COLUMN owner_name TO owner;
+
+SELECT * FROM store;
+
+
+-- STEP 14 :- CHANGE STORE_NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE store
+ALTER COLUMN store_name TYPE VARCHAR(100);
+
+SELECT * FROM store;
+
+
+-- STEP 15 :- CHANGE OWNER DATA TYPE (DDL COMMAND)
+
+ALTER TABLE store
+ALTER COLUMN owner TYPE VARCHAR(100);
+
+SELECT * FROM store;
+
+
+-- STEP 16 :- DROP PINCODE COLUMN (DDL COMMAND)
+
+ALTER TABLE store
+DROP COLUMN pincode;
+
+SELECT * FROM store;
+
+
+-- STEP 17 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE store
+RENAME TO store_details;
+
+SELECT * FROM store_details;
+
+
+-- STEP 18 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE store_details;
+
+SELECT * FROM store_details;
+
+
+-- STEP 19 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE store_details;
+
+-- _______________________________________________________________________________________________________
