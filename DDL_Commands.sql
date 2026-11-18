@@ -530,3 +530,40 @@ TRUNCATE TABLE institute_details;
 DROP TABLE institute_details;
 
 -- ___________________________________________________________________________________________________
+
+-- Example 16 :- STORE TABLE
+
+CREATE TABLE store(
+    store_id INT,
+    store_name VARCHAR(50),
+    city VARCHAR(50),
+    owner_name VARCHAR(50),
+    contact_number VARCHAR(15)
+);
+
+ALTER TABLE store
+ADD COLUMN pincode INT;
+
+ALTER TABLE store
+RENAME COLUMN city TO store_city;
+
+ALTER TABLE store
+RENAME COLUMN owner_name TO owner;
+
+ALTER TABLE store
+ALTER COLUMN store_name TYPE VARCHAR(100);
+
+ALTER TABLE store
+ALTER COLUMN owner TYPE VARCHAR(100);
+
+ALTER TABLE store
+DROP COLUMN pincode;
+
+ALTER TABLE store
+RENAME TO store_details;
+
+TRUNCATE TABLE store_details;
+
+DROP TABLE store_details;
+
+-- __________________________________________________________________________________________________
