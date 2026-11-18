@@ -443,3 +443,51 @@ WHERE institute_id = 4;
 SELECT * FROM institute;
 
 -- ________________________________________________________________________________________________
+
+-- Example 16 :- STORE TABLE
+
+INSERT INTO store(store_id, store_name, city, owner_name, contact_number, pincode)
+VALUES
+(1, 'Sharma General Store', 'Bhopal', 'Rahul Sharma', '9876543210', 462001),
+(2, 'Fresh Mart', 'Indore', 'Amit Verma', '9876543211', 452001),
+(3, 'City Super Store', 'Jabalpur', 'Neha Patel', '9876543212', 482001),
+(4, 'Smart Shopping Center', 'Delhi', 'Rohit Kumar', '9876543213', 110001),
+(5, 'Royal Departmental Store', 'Mumbai', 'Priya Singh', '9876543214', 400001);
+
+SELECT * FROM store;
+
+UPDATE store
+SET city = 'Pune'
+WHERE store_id = 2;
+
+SELECT * FROM store;
+
+UPDATE store
+SET owner_name = 'Gitanjali Patel'
+WHERE store_id = 4;
+
+SELECT * FROM store;
+
+UPDATE store
+SET contact_number = '7639451267'
+WHERE store_id = 5;
+
+SELECT * FROM store;
+
+UPDATE store
+SET pincode = 425786
+WHERE store_id = 3;
+
+SELECT * FROM store;
+
+DELETE FROM store
+WHERE store_id = 3;
+
+SELECT * FROM store;
+
+DELETE FROM store
+WHERE store_id = 5;
+
+SELECT * FROM store;
+
+-- ______________________________________________________________________________________________________
