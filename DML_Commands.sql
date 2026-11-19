@@ -540,3 +540,52 @@ SELECT * FROM laboratory;
 
 -- ___________________________________________________________________________________________________
 
+-- Example 18 :- PATIENT TABLE
+
+
+INSERT INTO patient(patient_id, patient_name, age, gender, patient_city, consulting_doctor)
+VALUES
+(1, 'Rahul Sharma', 25, 'Male', 'Bhopal', 'Dr. Amit Verma'),
+(2, 'Priya Singh', 30, 'Female', 'Indore', 'Dr. Neha Patel'),
+(3, 'Rohit Kumar', 45, 'Male', 'Jabalpur', 'Dr. Rajesh Gupta'),
+(4, 'Neha Sharma', 35, 'Female', 'Delhi', 'Dr. Pooja Mehta'),
+(5, 'Amit Patel', 50, 'Male', 'Mumbai', 'Dr. Suresh Jain');
+
+SELECT * FROM patient;
+
+UPDATE patient
+SET patient_city = 'Pune'
+WHERE patient_id = 2;
+
+SELECT * FROM patient;
+
+UPDATE patient
+SET patient_name = 'Gitanjali Patel'
+WHERE patient_id = 4;
+
+SELECT * FROM patient;
+
+UPDATE patient
+SET age = 28
+WHERE patient_id = 5;
+
+SELECT * FROM patient;
+
+UPDATE patient
+SET consulting_doctor = 'Dr. Anjali Sharma'
+WHERE patient_id = 3;
+
+SELECT * FROM patient;
+
+DELETE FROM patient
+WHERE patient_id = 3;
+
+SELECT * FROM patient;
+
+DELETE FROM patient
+WHERE patient_id = 5;
+
+SELECT * FROM patient;
+
+-- ____________________________________________________________________________________________________
+
