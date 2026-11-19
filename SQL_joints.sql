@@ -125,3 +125,81 @@ INNER JOIN employee_salary
 ON employee.employee_id = employee_salary.employee_id;
 
 -- ________________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 2 :- STUDENT AND STUDENT_MARKS TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- DISPLAY STUDENT TABLE
+
+SELECT * FROM student;
+
+
+-- STEP 2 :- CREATE STUDENT_MARKS TABLE
+
+CREATE TABLE student_marks (
+    student_id INT,
+    marks INT,
+    subject VARCHAR(50)
+);
+
+
+-- STEP 3 :- INSERT DATA INTO STUDENT_MARKS TABLE
+
+INSERT INTO student_marks (student_id, marks, subject)
+VALUES
+(1, 85, 'English'),
+(3, 90, 'Maths'),
+(4, 75, 'Science'),
+(5, 88, 'Hindi'),
+(6, 95, 'Computer'),
+(7, 80, 'English'),
+(20, 70, 'Maths');
+
+
+-- STEP 4 :- DISPLAY STUDENT_MARKS TABLE
+
+SELECT * FROM student_marks;
+
+
+-- STEP 5 :- LEFT JOIN
+
+SELECT
+    student.student_id,
+    student.student_name,
+    student.city,
+    student_marks.marks,
+    student_marks.subject
+FROM student
+LEFT JOIN student_marks
+ON student.student_id = student_marks.student_id;
+
+
+-- STEP 6 :- RIGHT JOIN
+
+SELECT
+    student.student_id,
+    student.student_name,
+    student.city,
+    student_marks.marks,
+    student_marks.subject
+FROM student
+RIGHT JOIN student_marks
+ON student.student_id = student_marks.student_id;
+
+
+-- STEP 7 :- INNER JOIN
+
+SELECT
+    student.student_id,
+    student.student_name,
+    student.city,
+    student_marks.marks,
+    student_marks.subject
+FROM student
+INNER JOIN student_marks
+ON student.student_id = student_marks.student_id;
+
+-- _________________________________________________________________________________________________________
