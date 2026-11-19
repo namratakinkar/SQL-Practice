@@ -491,3 +491,52 @@ WHERE store_id = 5;
 SELECT * FROM store;
 
 -- ______________________________________________________________________________________________________
+
+--Example 17 :- LABORATORY TABLE
+
+INSERT INTO laboratory(lab_id, lab_name, test_name, lab_city, test_charges, test_time)
+VALUES
+(1, 'Life Care Laboratory', 'Blood Test', 'Bhopal', 500, '30 Minutes'),
+(2, 'City Diagnostic Center', 'Sugar Test', 'Indore', 300, '20 Minutes'),
+(3, 'Health Plus Lab', 'Thyroid Test', 'Jabalpur', 700, '45 Minutes'),
+(4, 'Modern Pathology Lab', 'Urine Test', 'Delhi', 400, '25 Minutes'),
+(5, 'Shree Diagnostic Lab', 'CBC Test', 'Mumbai', 600, '35 Minutes');
+
+SELECT * FROM laboratory;
+
+UPDATE laboratory
+SET lab_city = 'Pune'
+WHERE lab_id = 2;
+
+SELECT * FROM laboratory;
+
+UPDATE laboratory
+SET lab_name = 'Royal Diagnostic Center'
+WHERE lab_id = 4;
+
+SELECT * FROM laboratory;
+
+UPDATE laboratory
+SET test_charges = 800
+WHERE lab_id = 5;
+
+SELECT * FROM laboratory;
+
+UPDATE laboratory
+SET test_time = '50 Minutes'
+WHERE lab_id = 3;
+
+SELECT * FROM laboratory;
+
+DELETE FROM laboratory
+WHERE lab_id = 3;
+
+SELECT * FROM laboratory;
+
+DELETE FROM laboratory
+WHERE lab_id = 5;
+
+SELECT * FROM laboratory;
+
+-- ___________________________________________________________________________________________________
+
