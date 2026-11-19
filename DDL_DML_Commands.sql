@@ -1402,3 +1402,164 @@ SELECT * FROM institute_details;
 DROP TABLE institute_details;
 
 -- _______________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 11 :- LABORATORY TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE laboratory(
+    lab_id INT,
+    lab_name VARCHAR(50),
+    test_name VARCHAR(50),
+    city VARCHAR(50),
+    test_fees INT,
+    test_duration VARCHAR(20)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM laboratory;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO laboratory(lab_id, lab_name, test_name, city, test_fees, test_duration)
+VALUES
+(1, 'Life Care Laboratory', 'Blood Test', 'Bhopal', 500, '30 Minutes'),
+(2, 'City Diagnostic Center', 'Sugar Test', 'Indore', 300, '20 Minutes'),
+(3, 'Health Plus Lab', 'Thyroid Test', 'Jabalpur', 700, '45 Minutes'),
+(4, 'Modern Pathology Lab', 'Urine Test', 'Delhi', 400, '25 Minutes'),
+(5, 'Shree Diagnostic Lab', 'CBC Test', 'Mumbai', 600, '35 Minutes');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM laboratory;
+
+
+-- STEP 5 :- UPDATE CITY (DML COMMAND)
+
+UPDATE laboratory
+SET city = 'Nagpur'
+WHERE lab_id = 3;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 6 :- UPDATE TEST NAME (DML COMMAND)
+
+UPDATE laboratory
+SET test_name = 'Liver Function Test'
+WHERE lab_id = 3;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 7 :- UPDATE TEST FEES (DML COMMAND)
+
+UPDATE laboratory
+SET test_fees = 800
+WHERE lab_id = 3;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 8 :- UPDATE TEST DURATION (DML COMMAND)
+
+UPDATE laboratory
+SET test_duration = '60 Minutes'
+WHERE lab_id = 3;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 9 :- DELETE LABORATORY RECORD (DML COMMAND)
+
+DELETE FROM laboratory
+WHERE lab_id = 5;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 10 :- DELETE ANOTHER LABORATORY RECORD (DML COMMAND)
+
+DELETE FROM laboratory
+WHERE lab_id = 4;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 11 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE laboratory
+ADD COLUMN technician_name VARCHAR(50);
+
+SELECT * FROM laboratory;
+
+
+-- STEP 12 :- RENAME CITY COLUMN (DDL COMMAND)
+
+ALTER TABLE laboratory
+RENAME COLUMN city TO lab_city;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 13 :- RENAME TEST FEES COLUMN (DDL COMMAND)
+
+ALTER TABLE laboratory
+RENAME COLUMN test_fees TO test_charges;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 14 :- RENAME TEST DURATION COLUMN (DDL COMMAND)
+
+ALTER TABLE laboratory
+RENAME COLUMN test_duration TO test_time;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 15 :- CHANGE LAB_NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE laboratory
+ALTER COLUMN lab_name TYPE VARCHAR(100);
+
+SELECT * FROM laboratory;
+
+
+-- STEP 16 :- DROP TECHNICIAN_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE laboratory
+DROP COLUMN technician_name;
+
+SELECT * FROM laboratory;
+
+
+-- STEP 17 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE laboratory
+RENAME TO laboratory_details;
+
+SELECT * FROM laboratory_details;
+
+
+-- STEP 18 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE laboratory_details;
+
+SELECT * FROM laboratory_details;
+
+
+-- STEP 19 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE laboratory_details;
+
+-- ____________________________________________________________________________________________________-
