@@ -567,3 +567,42 @@ TRUNCATE TABLE store_details;
 DROP TABLE store_details;
 
 -- __________________________________________________________________________________________________
+
+
+-- Example 17 :-LABOROTORY TABLE
+
+CREATE TABLE laboratory(
+    lab_id INT,
+    lab_name VARCHAR(50),
+    test_name VARCHAR(50),
+    city VARCHAR(50),
+    test_fees INT,
+    test_duration VARCHAR(50)
+);
+
+ALTER TABLE laboratory
+ADD COLUMN technician_name VARCHAR(50);
+
+ALTER TABLE laboratory
+RENAME COLUMN city TO lab_city;
+
+ALTER TABLE laboratory
+RENAME COLUMN test_fees TO test_charges;
+
+ALTER TABLE laboratory
+RENAME COLUMN test_duration TO test_time;
+
+ALTER TABLE laboratory
+ALTER COLUMN lab_name TYPE VARCHAR(100);
+
+ALTER TABLE laboratory
+DROP COLUMN technician_name;
+
+ALTER TABLE laboratory
+RENAME TO laboratory_details;
+
+TRUNCATE TABLE laboratory_details;
+
+DROP TABLE laboratory_details;
+
+-- _______________________________________________________________________________________________
