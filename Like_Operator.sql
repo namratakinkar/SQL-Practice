@@ -854,3 +854,113 @@ SELECT * FROM store
 WHERE store_name LIKE '%al%';
 
 -- __________________________________________________________________________________________
+
+-- =====================================================
+-- Example 8 :- LABORATORY TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE laboratory(
+    lab_id INT,
+    lab_name VARCHAR(50),
+    city VARCHAR(50),
+    test_name VARCHAR(50),
+    test_price INT,
+    contact_number VARCHAR(15)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM laboratory;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO laboratory(lab_id, lab_name, city, test_name, test_price, contact_number)
+VALUES
+(1, 'Apollo Diagnostic Lab', 'Bhopal', 'Blood Test', 500, '9876543210'),
+(2, 'Health Care Laboratory', 'Indore', 'Urine Test', 300, '9876543211'),
+(3, 'Bright Pathology Lab', 'Jabalpur', 'Thyroid Test', 800, '9876543212'),
+(4, 'City Diagnostic Center', 'Delhi', 'Sugar Test', 400, '9876543213'),
+(5, 'Life Care Laboratory', 'Mumbai', 'Liver Test', 1200, '9876543214'),
+(6, 'Advanced Testing Lab', 'Pune', 'Kidney Test', 1000, '9876543215'),
+(7, 'Global Diagnostic Center', 'Jaipur', 'Vitamin Test', 900, '9876543216'),
+(8, 'Modern Pathology Lab', 'Lucknow', 'CBC Test', 600, '9876543217'),
+(9, 'National Health Lab', 'Nagpur', 'Cholesterol Test', 700, '9876543218'),
+(10, 'Excel Diagnostic Lab', 'Gwalior', 'Malaria Test', 450, '9876543219'),
+(11, 'NextGen Laboratory', 'Chennai', 'Dengue Test', 1100, '9876543220'),
+(12, 'Care Point Lab', 'Kolkata', 'ECG Test', 500, '9876543221'),
+(13, 'Smart Health Center', 'Raipur', 'Vitamin D Test', 1500, '9876543222'),
+(14, 'Prime Diagnostic Lab', 'Surat', 'X-Ray Test', 800, '9876543223'),
+(15, 'Royal Pathology Center', 'Hyderabad', 'Hemoglobin Test', 350, '9876543224');
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM laboratory;
+
+
+-- =====================================================
+-- LIKE OPERATOR (A%) START WITH A
+-- =====================================================
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE 'A%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE 'H%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE 'B%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE 'C%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE 'M%';
+
+
+-- =====================================================
+-- LIKE OPERATOR (%a) ENDS WITH A
+-- =====================================================
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%a';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%r';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%y';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%t';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%n';
+
+
+-- =====================================================
+-- LIKE OPERATOR (%ab%) CONTAINS CHARACTERS
+-- =====================================================
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%ti%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%ra%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%th%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%ca%';
+
+SELECT * FROM laboratory
+WHERE lab_name LIKE '%la%';
+
+-- ________________________________________________________________________________________________
