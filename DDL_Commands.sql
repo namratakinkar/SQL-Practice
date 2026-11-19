@@ -606,3 +606,38 @@ TRUNCATE TABLE laboratory_details;
 DROP TABLE laboratory_details;
 
 -- _______________________________________________________________________________________________
+
+-- Example 18 :- PATIENT TABLE
+
+CREATE TABLE patient(
+    patient_id INT,
+    patient_name VARCHAR(50),
+    age INT,
+    gender VARCHAR(20),
+    city VARCHAR(50),
+    doctor_name VARCHAR(50)
+);
+
+ALTER TABLE patient
+ADD COLUMN disease_name VARCHAR(50);
+
+ALTER TABLE patient
+RENAME COLUMN city TO patient_city;
+
+ALTER TABLE patient
+RENAME COLUMN doctor_name TO consulting_doctor;
+
+ALTER TABLE patient
+ALTER COLUMN patient_name TYPE VARCHAR(100);
+
+ALTER TABLE patient
+DROP COLUMN disease_name;
+
+ALTER TABLE patient
+RENAME TO patient_details;
+
+TRUNCATE TABLE patient_details;
+
+DROP TABLE patient_details;
+
+-- ____________________________________________________________________________________________________
