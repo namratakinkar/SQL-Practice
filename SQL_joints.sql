@@ -1,0 +1,127 @@
+-- ==============================================
+--   SQL JOINTS
+-- ==============================================
+
+-- ==================================================
+--  USE CASE OF JOIN
+-- ==================================================
+
+-- ==>whenever we need to display combined data of more than one table in that case we can join
+
+-- ==> it is used to marge data of two table 
+
+-- =======================================
+-- TYPES OF JOIN :-
+-- =======================================
+
+-- 1. Left join 
+
+-- ==> In this case left table data in can't be null
+
+-- 2. Right join
+
+-- ==> In this case right table data can be null
+
+-- 3. Inner Join
+
+-- ==> In this case out put be only matched data according to the given condition
+
+-- ==> In this case we can't show null data 
+
+-- 4. Outer Join
+
+-- ==> If no matching record is found in either table, NULL values are returned for the missing side.
+
+-- ==> FULL OUTER JOIN returns all records from both tables.
+
+-- IMPORTANT POINTS
+
+-- JOIN combines data from multiple tables.
+
+-- A common column is generally used to connect two tables.
+
+-- ON keyword is used to specify the joining condition.
+
+-- JOIN helps to retrieve related information from different tables.
+
+-- =======================================
+--  EXAMPLES
+-- =======================================
+
+-- =====================================================
+-- Example 1 :- EMPLOYEE AND EMPLOYEE_SALARY TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- DISPLAY EMPLOYEE TABLE
+
+SELECT * FROM employee;
+
+
+-- STEP 2 :- CREATE EMPLOYEE_SALARY TABLE
+
+CREATE TABLE employee_salary (
+    employee_id INT,
+    salary INT,
+    city VARCHAR(50)
+);
+
+
+-- STEP 3 :- INSERT DATA INTO EMPLOYEE_SALARY TABLE
+
+INSERT INTO employee_salary (employee_id, salary, city)
+VALUES
+(1, 25000, 'Bhopal'),
+(3, 30000, 'Indore'),
+(4, 35000, 'Jabalpur'),
+(5, 40000, 'Delhi'),
+(6, 45000, 'Mumbai'),
+(7, 50000, 'Pune'),
+(20, 55000, 'Nagpur');
+
+
+-- STEP 4 :- DISPLAY EMPLOYEE_SALARY TABLE
+
+SELECT * FROM employee_salary;
+
+
+-- STEP 5 :- LEFT JOIN
+
+SELECT
+    employee.employee_id,
+    employee.employee_name,
+    employee.department,
+    employee_salary.salary,
+    employee_salary.city
+FROM employee
+LEFT JOIN employee_salary
+ON employee.employee_id = employee_salary.employee_id;
+
+
+-- STEP 6 :- RIGHT JOIN
+
+SELECT
+    employee.employee_id,
+    employee.employee_name,
+    employee.department,
+    employee_salary.salary,
+    employee_salary.city
+FROM employee
+RIGHT JOIN employee_salary
+ON employee.employee_id = employee_salary.employee_id;
+
+
+-- STEP 7 :- INNER JOIN
+
+SELECT
+    employee.employee_id,
+    employee.employee_name,
+    employee.department,
+    employee_salary.salary,
+    employee_salary.city
+FROM employee
+INNER JOIN employee_salary
+ON employee.employee_id = employee_salary.employee_id;
+
+-- ________________________________________________________________________________________________________
