@@ -964,3 +964,105 @@ SELECT * FROM laboratory
 WHERE lab_name LIKE '%la%';
 
 -- ________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 9 :- HOUSE TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE house(
+    house_number INT,
+    house_name VARCHAR(50),
+    village_name VARCHAR(50),
+    address VARCHAR(50),
+    city VARCHAR(50),
+    pincode INT
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM house;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO house(house_number, house_name, village_name, address, city, pincode)
+VALUES
+(1, 'Sharma House', 'Rampur', 'Near Hanuman Temple', 'Bhopal', 462001),
+(2, 'Verma House', 'Sundarpur', 'Near Government School', 'Indore', 452001),
+(3, 'Patel House', 'Rajpur', 'Main Road', 'Jabalpur', 482001),
+(4, 'Kumar House', 'Shivpur', 'Near Bus Stand', 'Gwalior', 474001),
+(5, 'Singh House', 'Krishnapur', 'Near Railway Station', 'Delhi', 110001),
+(6, 'Gupta House', 'Chandpur', 'Near School', 'Pune', 411001),
+(7, 'Yadav House', 'Devgaon', 'Main Market Road', 'Nagpur', 440001),
+(8, 'Patil House', 'Lakshmipur', 'Near Temple', 'Nashik', 422001),
+(9, 'Mishra House', 'Madhopur', 'Near Panchayat Office', 'Kanpur', 208001),
+(10, 'Thakur House', 'Govindpur', 'Near Water Tank', 'Jaipur', 302001);
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM house;
+
+
+-- STEP 5 :- LIKE OPERATOR (S%) STARTS WITH S
+
+SELECT * FROM house
+WHERE house_name LIKE 'S%';
+
+SELECT * FROM house
+WHERE house_name LIKE 'V%';
+
+SELECT * FROM house
+WHERE house_name LIKE 'P%';
+
+SELECT * FROM house
+WHERE house_name LIKE 'M%';
+
+SELECT * FROM house
+WHERE house_name LIKE 'Y%';
+
+
+-- STEP 6 :- LIKE OPERATOR (%a) ENDS WITH a
+
+SELECT * FROM house
+WHERE house_name LIKE '%a';
+
+SELECT * FROM house
+WHERE house_name LIKE '%l';
+
+SELECT * FROM house
+WHERE house_name LIKE '%e';
+
+SELECT * FROM house
+WHERE house_name LIKE '%r';
+
+SELECT * FROM house
+WHERE house_name LIKE '%h';
+
+
+-- STEP 7 :- LIKE OPERATOR (%ar%) SUBSTRING
+
+SELECT * FROM house
+WHERE house_name LIKE '%ar%';
+
+SELECT * FROM house
+WHERE house_name LIKE '%ate%';
+
+SELECT * FROM house
+WHERE house_name LIKE '%um%';
+
+SELECT * FROM house
+WHERE house_name LIKE '%in%';
+
+SELECT * FROM house
+WHERE house_name LIKE '%ish%';
+
+
+-- =====================================================
+-- END OF HOUSE TABLE EXAMPLE
+-- =====================================================
