@@ -641,3 +641,68 @@ TRUNCATE TABLE patient_details;
 DROP TABLE patient_details;
 
 -- ____________________________________________________________________________________________________
+
+-- Example 19 :- HOUSE TABLE
+
+CREATE TABLE house(
+     house_number INT,
+     house_name VARCHAR(50),
+     village_name VARCHAR(50),
+     address VARCHAR(50),
+     pincode INT
+);
+
+SELECT * FROM house;
+
+ALTER TABLE house
+ADD COLUMN city VARCHAR(50);
+
+SELECT * FROM house;
+
+ALTER TABLE house
+RENAME COLUMN village_name TO village;
+
+SELECT * FROM house;
+
+ALTER TABLE house
+RENAME COLUMN address to house_address;
+
+SELECT * FROM house;
+
+ALTER TABLE house
+ALTER COLUMN house_name TYPE VARCHAR(100);
+
+SELECT * FROM house;
+
+ALTER TABLE house
+ALTER COLUMN house_address TYPE VARCHAR(100);
+
+SELECT * FROM house;
+
+ALTER TABLE house
+ALTER COLUMN village TYPE VARCHAR(100);
+
+SELECT * FROM house;
+
+ALTER TABLE house
+DROP COLUMN city;
+
+SELECT * FROM house;
+
+AITER TABLE house
+DROP COLUMN pincode;
+
+SELECT * FROM house;
+
+ALTER TABLE house
+RENAME TO house_details;
+
+SELECT * FROM house_details;
+
+TRUNCATE TABLE house_details;
+
+SELECT * FROM house_details;
+
+DROP TABLE house_details;
+
+-- ______________________________________________________________________________________________________
