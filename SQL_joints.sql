@@ -203,3 +203,92 @@ INNER JOIN student_marks
 ON student.student_id = student_marks.student_id;
 
 -- _________________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 3 :- CUSTOMER AND CUSTOMER_ORDER TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- DISPLAY CUSTOMER TABLE
+
+SELECT * FROM customer;
+
+
+-- STEP 2 :- CREATE CUSTOMER_ORDER TABLE
+
+CREATE TABLE customer_order (
+    customer_id INT,
+    order_id INT,
+    product_name VARCHAR(50),
+    amount INT
+);
+
+
+-- STEP 3 :- INSERT DATA INTO CUSTOMER_ORDER TABLE
+
+INSERT INTO customer_order (customer_id, order_id, product_name, amount)
+VALUES
+(1, 101, 'Laptop', 45000),
+(3, 102, 'Mobile', 25000),
+(4, 103, 'Keyboard', 1500),
+(5, 104, 'Mouse', 800),
+(6, 105, 'Monitor', 12000),
+(7, 106, 'Printer', 15000),
+(20, 107, 'Headphones', 2000);
+
+
+-- STEP 4 :- DISPLAY CUSTOMER_ORDER TABLE
+
+SELECT * FROM customer_order;
+
+
+-- STEP 5 :- LEFT JOIN
+
+SELECT
+    customer.customer_id,
+    customer.customer_name,
+    customer.city,
+    customer_order.order_id,
+    customer_order.product_name,
+    customer_order.amount
+FROM customer
+LEFT JOIN customer_order
+ON customer.customer_id = customer_order.customer_id;
+
+
+-- STEP 6 :- RIGHT JOIN
+
+SELECT
+    customer.customer_id,
+    customer.customer_name,
+    customer.city,
+    customer_order.order_id,
+    customer_order.product_name,
+    customer_order.amount
+FROM customer
+RIGHT JOIN customer_order
+ON customer.customer_id = customer_order.customer_id;
+
+
+-- STEP 7 :- INNER JOIN
+
+SELECT
+    customer.customer_id,
+    customer.customer_name,
+    customer.city,
+    customer_order.order_id,
+    customer_order.product_name,
+    customer_order.amount
+FROM customer
+INNER JOIN customer_order
+ON customer.customer_id = customer_order.customer_id;
+
+--______________________________________________________________________________________________________
+
+
+
+-- =====================================================
+-- END OF CUSTOMER AND CUSTOMER_ORDER TABLE
+-- =====================================================
