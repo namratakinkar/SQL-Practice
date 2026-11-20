@@ -1562,4 +1562,214 @@ SELECT * FROM laboratory_details;
 
 DROP TABLE laboratory_details;
 
--- ____________________________________________________________________________________________________-
+-- ____________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 12 :- HOUSE TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE house(
+    house_number INT,
+    house_name VARCHAR(50),
+    village_name VARCHAR(50),
+    address VARCHAR(50),
+    pincode INT
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM house;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO house(house_number, house_name, village_name, address, pincode)
+VALUES
+(1, 'Sharma House', 'Rampur', 'Near Hanuman Temple', 462001),
+(2, 'Verma House', 'Sundarpur', 'Near Government School', 452001),
+(3, 'Patel House', 'Rajpur', 'Main Road', 482001),
+(4, 'Kumar House', 'Shivpur', 'Near Bus Stand', 474001),
+(5, 'Singh House', 'Krishnapur', 'Near Railway Station', 110001);
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM house;
+
+
+-- STEP 5 :- UPDATE VILLAGE NAME (DML COMMAND)
+
+UPDATE house
+SET village_name = 'Govindpur'
+WHERE house_number = 4;
+
+SELECT * FROM house;
+
+
+-- STEP 6 :- UPDATE HOUSE NAME (DML COMMAND)
+
+UPDATE house
+SET house_name = 'Thakur House'
+WHERE house_number = 3;
+
+SELECT * FROM house;
+
+
+-- STEP 7 :- UPDATE HOUSE ADDRESS (DML COMMAND)
+
+UPDATE house
+SET address = 'Main Road'
+WHERE house_number = 5;
+
+SELECT * FROM house;
+
+
+-- STEP 8 :- UPDATE PINCODE (DML COMMAND)
+
+UPDATE house
+SET pincode = 470336
+WHERE house_number = 1;
+
+SELECT * FROM house;
+
+
+-- STEP 9 :- DELETE HOUSE RECORD (DML COMMAND)
+
+DELETE FROM house
+WHERE house_number = 4;
+
+SELECT * FROM house;
+
+
+-- STEP 10 :- DELETE ANOTHER HOUSE RECORD (DML COMMAND)
+
+DELETE FROM house
+WHERE house_number = 5;
+
+SELECT * FROM house;
+
+
+-- STEP 11 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE house
+ADD COLUMN city VARCHAR(50);
+
+SELECT * FROM house;
+
+
+-- STEP 12 :- UPDATE CITY (DML COMMAND)
+
+UPDATE house
+SET city = 'Bhopal'
+WHERE house_number = 1;
+
+SELECT * FROM house;
+
+
+-- STEP 13 :- UPDATE CITY (DML COMMAND)
+
+UPDATE house
+SET city = 'Indore'
+WHERE house_number = 2;
+
+SELECT * FROM house;
+
+
+-- STEP 14 :- UPDATE CITY (DML COMMAND)
+
+UPDATE house
+SET city = 'Pune'
+WHERE house_number = 3;
+
+SELECT * FROM house;
+
+
+-- STEP 15 :- RENAME VILLAGE_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE house
+RENAME COLUMN village_name TO village;
+
+SELECT * FROM house;
+
+
+-- STEP 16 :- RENAME ADDRESS COLUMN (DDL COMMAND)
+
+ALTER TABLE house
+RENAME COLUMN address TO house_address;
+
+SELECT * FROM house;
+
+
+-- STEP 17 :- RENAME CITY COLUMN (DDL COMMAND)
+
+ALTER TABLE house
+RENAME COLUMN city TO house_city;
+
+SELECT * FROM house;
+
+
+-- STEP 18 :- CHANGE HOUSE_NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE house
+ALTER COLUMN house_name TYPE VARCHAR(100);
+
+SELECT * FROM house;
+
+
+-- STEP 19 :- CHANGE HOUSE_ADDRESS DATA TYPE (DDL COMMAND)
+
+ALTER TABLE house
+ALTER COLUMN house_address TYPE VARCHAR(100);
+
+SELECT * FROM house;
+
+
+-- STEP 20 :- CHANGE VILLAGE DATA TYPE (DDL COMMAND)
+
+ALTER TABLE house
+ALTER COLUMN village TYPE VARCHAR(100);
+
+SELECT * FROM house;
+
+
+-- STEP 21 :- DROP HOUSE_CITY COLUMN (DDL COMMAND)
+
+ALTER TABLE house
+DROP COLUMN house_city;
+
+SELECT * FROM house;
+
+
+-- STEP 22 :- DROP PINCODE COLUMN (DDL COMMAND)
+
+ALTER TABLE house
+DROP COLUMN pincode;
+
+SELECT * FROM house;
+
+
+-- STEP 23 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE house
+RENAME TO house_details;
+
+SELECT * FROM house_details;
+
+
+-- STEP 24 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE house_details;
+
+SELECT * FROM house_details;
+
+
+-- STEP 25 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE house_details;
+
+--____________________________________________________________________________________________________
