@@ -288,6 +288,81 @@ ON customer.customer_id = customer_order.customer_id;
 --______________________________________________________________________________________________________
 
 
+-- =====================================================
+-- Example 4 :- TEACHER AND TEACHER_SALARY TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- DISPLAY TEACHER TABLE
+
+SELECT * FROM teacher;
+
+
+-- STEP 2 :- CREATE TEACHER_SALARY TABLE
+
+CREATE TABLE teacher_salary (
+    teacher_id INT,
+    salary INT,
+    subject VARCHAR(50)
+);
+
+
+-- STEP 3 :- INSERT DATA INTO TEACHER_SALARY TABLE
+
+INSERT INTO teacher_salary (teacher_id, salary, subject)
+VALUES
+(1, 25000, 'English'),
+(3, 30000, 'Maths'),
+(4, 35000, 'Science'),
+(5, 40000, 'Computer'),
+(6, 45000, 'Hindi'),
+(7, 50000, 'Physics'),
+(20, 55000, 'Chemistry');
+
+
+-- STEP 4 :- DISPLAY TEACHER_SALARY TABLE
+
+SELECT * FROM teacher_salary;
+
+
+-- STEP 5 :- LEFT JOIN
+
+SELECT
+    teacher.teacher_id,
+    teacher.teacher_name,
+    teacher.department,
+    teacher_salary.salary,
+    teacher_salary.subject
+FROM teacher
+LEFT JOIN teacher_salary
+ON teacher.teacher_id = teacher_salary.teacher_id;
+
+
+-- STEP 6 :- RIGHT JOIN
+
+SELECT
+    teacher.teacher_id,
+    teacher.teacher_name,
+    teacher.department,
+    teacher_salary.salary,
+    teacher_salary.subject
+FROM teacher
+RIGHT JOIN teacher_salary
+ON teacher.teacher_id = teacher_salary.teacher_id;
+
+
+-- STEP 7 :- INNER JOIN
+
+SELECT
+    teacher.teacher_id,
+    teacher.teacher_name,
+    teacher.department,
+    teacher_salary.salary,
+    teacher_salary.subject
+FROM teacher
+INNER JOIN teacher_salary
+ON teacher.teacher_id = teacher_salary.teacher_id;
 
 -- =====================================================
 -- END OF CUSTOMER AND CUSTOMER_ORDER TABLE
