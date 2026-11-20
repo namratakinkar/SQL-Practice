@@ -589,3 +589,62 @@ SELECT * FROM patient;
 
 -- ____________________________________________________________________________________________________
 
+-- Example 19 :- HOUSE TABLE
+
+INSERT INTO house(house_number, house_name, village_name, address, city, pincode)
+VALUES
+(1, 'Sharma House', 'Rampur', 'Near Hanuman Temple', 'Bhopal', 462001),
+(2, 'Verma House', 'Sundarpur', 'Near Government School', 'Indore', 452001),
+(3, 'Patel House', 'Rajpur', 'Main Road', 'Jabalpur', 482001),
+(4, 'Kumar House', 'Shivpur', 'Near Bus Stand', 'Gwalior', 474001),
+(5, 'Singh House', 'Krishnapur', 'Near Railway Station', 'Delhi', 110001);
+
+SELECT * FROM house;
+
+UPDATE house
+SET city = 'Pune'
+WHERE house_number = 2;
+
+SELECT * FROM house;
+
+UPDATE house
+SET village_name = 'Govindpur'
+WHERE house_number = 4;
+
+SELECT * FROM house;
+
+UPDATE house
+SET house_name = 'Thakur House'
+WHERE house_number = 3;
+
+SELECT * FROM house;
+
+UPDATE house
+SET address = 'Main Road'
+WHERE house_number = 5;
+
+SELECT * FROM house;
+
+UPDATE house
+SET pincode = 470336
+WHERE house_number = 1;
+
+SELECT * FROM house;
+
+DELETE FROM house
+WHERE house_number = 4;
+
+SELECT * FROM house;
+
+DELETE FROM house
+WHERE house_number = 5;
+
+SELECT * FROM house;
+
+DELETE FROM house
+WHERE house_number = 2;
+
+SELECT * FROM house;
+
+-- __________________________________________________________________________________________
+
