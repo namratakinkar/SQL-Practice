@@ -706,3 +706,49 @@ SELECT * FROM house_details;
 DROP TABLE house_details;
 
 -- ______________________________________________________________________________________________________
+
+-- Example 20 :- LONE TABLE
+
+CREATE TABLE loan_demo(
+    loan_id INT,
+    customer_name VARCHAR(50),
+    loan_amount INT,
+    loan_date DATE,
+    loan_status VARCHAR(50)
+);
+
+SELECT * FROM loan_demo;
+
+ALTER TABLE loan_demo
+ADD COLUMN loan_type VARCHAR(50);
+
+ALTER TABLE loan_demo
+RENAME COLUMN loan_amount TO amount;
+
+ALTER TABLE loan_demo
+RENAME COLUMN loan_date TO application_date;
+
+ALTER TABLE loan_demo
+RENAME COLUMN loan_status TO status;
+
+ALTER TABLE loan_demo
+ALTER COLUMN customer_name TYPE VARCHAR(100);
+
+ALTER TABLE loan_demo
+ALTER COLUMN status TYPE VARCHAR(100);
+
+ALTER TABLE loan_demo
+DROP COLUMN loan_type;
+
+ALTER TABLE loan_demo
+RENAME TO loan_details;
+
+SELECT * FROM loan_details;
+
+TRUNCATE TABLE loan_details;
+
+SELECT * FROM loan_details;
+
+DROP TABLE loan_details;
+
+-- ____________________________________________________________________________________________________
