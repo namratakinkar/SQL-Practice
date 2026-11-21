@@ -1062,6 +1062,101 @@ WHERE house_name LIKE '%in%';
 SELECT * FROM house
 WHERE house_name LIKE '%ish%';
 
+-- ___________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 10 :- loan TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+-- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE loan(
+    loan_id INT,
+    customer_name VARCHAR(100),
+    loan_amount INT,
+    loan_date DATE,
+    loan_status VARCHAR(50),
+    loan_type VARCHAR(50)
+);
+
+-- INSERT DATA (DML COMMAND)
+
+INSERT INTO loan(loan_id, customer_name, loan_amount, loan_date, loan_status, loan_type)
+VALUES
+(1, 'Rahul Sharma', 50000, '2025-01-10', 'Approved', 'Home Loan'),
+(2, 'Priya Verma', 75000, '2025-01-15', 'Pending', 'Car Loan'),
+(3, 'Amit Patel', 100000, '2025-02-05', 'Approved', 'Personal Loan'),
+(4, 'Neha Singh', 25000, '2025-02-12', 'Rejected', 'Education Loan'),
+(5, 'Rohit Kumar', 150000, '2025-03-01', 'Approved', 'Business Loan'),
+(6, 'Pooja Gupta', 60000, '2025-03-10', 'Pending', 'Home Loan'),
+(7, 'Vikas Yadav', 90000, '2025-03-18', 'Approved', 'Car Loan'),
+(8, 'Anjali Mehta', 40000, '2025-04-02', 'Rejected', 'Personal Loan'),
+(9, 'Suresh Jain', 200000, '2025-04-15', 'Approved', 'Home Loan'),
+(10, 'Kavita Joshi', 85000, '2025-05-05', 'Pending', 'Car Loan'),
+(11, 'Deepak Verma', 120000, '2025-05-20', 'Approved', 'Business Loan'),
+(12, 'Sneha Patel', 55000, '2025-06-01', 'Rejected', 'Education Loan'),
+(13, 'Manish Sharma', 175000, '2025-06-15', 'Approved', 'Personal Loan'),
+(14, 'Riya Agarwal', 30000, '2025-07-10', 'Pending', 'Home Loan'),
+(15, 'Karan Malhotra', 95000, '2025-07-25', 'Approved', 'Car Loan');
+
+-- DISPLAY DATA (DQL COMMAND)
+
+SELECT * FROM loan;
+
+-- LIKE OPERATOR (A%) STARTS WITH A
+
+SELECT * FROM loan
+WHERE customer_name LIKE 'P%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE 'S%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE 'K%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE 'V%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE 'R%';
+
+
+-- LIKE OPERATOR (%a) ENDS WITH A
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%a';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%ma';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%al';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%il';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%ar';
+
+
+-- LIKE OPERATOR (%ab%) SUBSTRING
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%oo%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%os%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%ar%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%er%';
+
+SELECT * FROM loan
+WHERE customer_name LIKE '%avit%';
+
 
 -- =====================================================
 -- END OF HOUSE TABLE EXAMPLE
