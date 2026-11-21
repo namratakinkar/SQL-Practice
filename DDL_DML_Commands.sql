@@ -1773,3 +1773,107 @@ SELECT * FROM house_details;
 DROP TABLE house_details;
 
 --____________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 13 :- LOAN TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+-- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE loan(
+    loan_id INT,
+    customer_name VARCHAR(100),
+    loan_amount INT,
+    loan_date DATE,
+    loan_status VARCHAR(50),
+    loan_type VARCHAR(50)
+);
+
+-- INSERT DATA (DML COMMAND)
+
+INSERT INTO loan(loan_id, customer_name, loan_amount, loan_date, loan_status, loan_type)
+VALUES
+(1, 'Rahul Sharma', 50000, '2025-01-10', 'Approved', 'Home Loan'),
+(2, 'Priya Verma', 75000, '2025-01-15', 'Pending', 'Car Loan'),
+(3, 'Amit Patel', 100000, '2025-02-05', 'Approved', 'Personal Loan'),
+(4, 'Neha Singh', 25000, '2025-02-12', 'Rejected', 'Education Loan'),
+(5, 'Rohit Kumar', 150000, '2025-03-01', 'Approved', 'Business Loan'),
+(6, 'Pooja Gupta', 60000, '2025-03-10', 'Pending', 'Home Loan'),
+(7, 'Vikas Yadav', 90000, '2025-03-18', 'Approved', 'Car Loan'),
+(8, 'Anjali Mehta', 40000, '2025-04-02', 'Rejected', 'Personal Loan'),
+(9, 'Suresh Jain', 200000, '2025-04-15', 'Approved', 'Home Loan'),
+(10, 'Kavita Joshi', 85000, '2025-05-05', 'Pending', 'Car Loan'),
+(11, 'Deepak Verma', 120000, '2025-05-20', 'Approved', 'Business Loan'),
+(12, 'Sneha Patel', 55000, '2025-06-01', 'Rejected', 'Education Loan'),
+(13, 'Manish Sharma', 175000, '2025-06-15', 'Approved', 'Personal Loan'),
+(14, 'Riya Agarwal', 30000, '2025-07-10', 'Pending', 'Home Loan'),
+(15, 'Karan Malhotra', 95000, '2025-07-25', 'Approved', 'Car Loan');
+
+-- DISPLAY DATA (DQL COMMAND)
+
+SELECT * FROM loan;
+
+-- UPDATE DATA (DML COMMAND)
+
+UPDATE loan
+SET loan_amount = 250000
+WHERE loan_id = 2;
+
+SELECT * FROM loan;
+
+UPDATE loan
+SET loan_status = 'Pending'
+WHERE loan_id = 1;
+
+SELECT * FROM loan;
+
+-- DELETE DATA (DML COMMAND)
+
+DELETE FROM loan
+WHERE loan_id = 1;
+
+SELECT * FROM loan;
+
+-- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE loan
+ADD COLUMN branch_name VARCHAR(50);
+
+SELECT * FROM loan;
+
+-- RENAME COLUMN (DDL COMMAND)
+
+ALTER TABLE loan
+RENAME COLUMN loan_amount TO amount;
+
+SELECT * FROM loan;
+
+-- CHANGE COLUMN DATA TYPE (DDL COMMAND)
+
+ALTER TABLE loan
+ALTER COLUMN customer_name TYPE VARCHAR(150);
+
+SELECT * FROM loan;
+
+-- DROP COLUMN (DDL COMMAND)
+
+ALTER TABLE loan
+RENAME TO loan_details;
+
+-- RENAME TABLE (DDL COMMAND)
+
+SELECT * FROM loan_details;
+
+-- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE loan_details;
+
+SELECT * FROM loan_details;
+
+
+-- DROP TABLE (DDL COMMAND)
+
+DROP TABLE loan_details;
+
+-- ___________________________________________________________________________________________________
