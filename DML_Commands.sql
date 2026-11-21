@@ -648,3 +648,34 @@ SELECT * FROM house;
 
 -- __________________________________________________________________________________________
 
+--  Example 20 :- LONE TABLE
+
+INSERT INTO loan(loan_id, customer_name, loan_ammount, loan_date, loan_status)
+VALUES
+(1, 'Rahul Sharma', 50000, '2025-01-10', 'Approved'),
+(2, 'Priya Verma', 75000, '2025-01-15', 'Pending'),
+(3, 'Amit Patel', 100000, '2025-02-05', 'Approved'),
+(4, 'Neha Singh', 25000, '2025-02-12', 'Rejected'),
+(5, 'Rohit Kumar', 150000, '2025-03-01', 'Approved');
+
+SELECT * FROM loan;
+
+UPDATE loan
+SET loan_ammount = 250000
+WHERE loan_id = 2;
+
+SELECT * FROM loan;
+
+UPDATE loan
+SET loan_status = 'pending'
+WHERE loan_id = 1;
+
+SELECT * FROM loan;
+
+DELETE FROM loan
+WHERE loan_id = 1;
+
+SELECT * FROM loan;
+
+-- _________________________________________________________________________________________________
+
