@@ -364,6 +364,99 @@ FROM teacher
 INNER JOIN teacher_salary
 ON teacher.teacher_id = teacher_salary.teacher_id;
 
+-- _________________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 5 :- LOAN AND LOAN_CUSTOMER TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+CREATE TABLE loan(
+    loan_id INT,
+    loan_type VARCHAR(50),
+    loan_status VARCHAR(50)
+);
+
+SELECT * FROM loan;
+
+INSERT INTO loan(loan_id, loan_type, loan_status)
+VALUES
+(1, 'Home Loan', 'Approved'),
+(2, 'Car Loan', 'Pending'),
+(3, 'Personal Loan', 'Approved'),
+(4, 'Education Loan', 'Rejected'),
+(5, 'Business Loan', 'Pending');
+
+SELECT * FROM loan;
+
+CREATE TABLE loan_customer(
+    loan_id INT,
+    customer_name VARCHAR(50),
+    loan_amount INT
+);
+
+SELECT * FROM loan_customer;
+
+INSERT INTO loan_customer(loan_id, customer_name, loan_amount)
+VALUES
+(1, 'Rahul Sharma', 50000),
+(2, 'Priya Verma', 75000),
+(3, 'Amit Patel', 100000),
+(5, 'Neha Singh', 25000),
+(6, 'Rohit Kumar', 150000);
+
+SELECT * FROM loan_customer;
+
+-- LEFT JOIN (ALL RECORDS FROM LEFT TABLE)
+
+SELECT
+    loan.loan_id,
+    loan.loan_type,
+    loan.loan_status,
+    loan_customer.customer_name,
+    loan_customer.loan_amount
+FROM loan
+LEFT JOIN loan_customer
+ON loan.loan_id = loan_customer.loan_id;
+
+-- RIGHT JOIN (ALL RECORDS FROM RIGHT TABLE)
+
+SELECT
+    loan.loan_id,
+    loan.loan_type,
+    loan.loan_status,
+    loan_customer.customer_name,
+    loan_customer.loan_amount
+FROM loan
+RIGHT JOIN loan_customer
+ON loan.loan_id = loan_customer.loan_id;
+
+-- INNER JOIN (ONLY MATCHED RECORDS)
+
+SELECT
+    loan.loan_id,
+    loan.loan_type,
+    loan.loan_status,
+    loan_customer.customer_name,
+    loan_customer.loan_amount
+FROM loan
+INNER JOIN loan_customer
+ON loan.loan_id = loan_customer.loan_id;
+
+-- FULL OUTER JOIN (ALL MATCHED AND UNMATCHED RECORDS)
+
+SELECT
+    loan.loan_id,
+    loan.loan_type,
+    loan.loan_status,
+    loan_customer.customer_name,
+    loan_customer.loan_amount
+FROM loan
+FULL OUTER JOIN loan_customer
+ON loan.loan_id = loan_customer.loan_id;
+
+-- ______________________________________________________________________________________________________
+
 -- =====================================================
 -- END OF CUSTOMER AND CUSTOMER_ORDER TABLE
 -- =====================================================
