@@ -679,3 +679,61 @@ SELECT * FROM loan;
 
 -- _________________________________________________________________________________________________
 
+-- Example 21 :- SUBJECT TABLE
+
+INSERT INTO subject(subject_id, subject_name, subject_code, teacher_name, subject_fee)
+VALUES
+(1, 'Python', 101, 'Amit Sharma', 5000),
+(2, 'Java', 102, 'Neha Verma', 4500),
+(3, 'SQL', 103, 'Rahul Patel', 3000),
+(4, 'C Programming', 104, 'Priya Singh', 3500),
+(5, 'Web Development', 105, 'Ankit Kumar', 6000);
+
+SELECT * FROM subject;
+
+UPDATE subject
+SET subject_name = 'Advanced Python'
+WHERE subject_id = 1;
+
+SELECT * FROM subject;
+
+UPDATE subject
+SET teacher_name = 'Pooja Verma'
+WHERE subject_id = 2;
+
+SELECT * FROM subject;
+
+UPDATE subject
+SET subject_code = 110
+WHERE subject_id = 3;
+
+SELECT * FROM subject;
+
+UPDATE subject
+SET subject_fee = 4000
+WHERE subject_id = 4;
+
+SELECT * FROM subject;
+
+UPDATE subject
+SET subject_fee = 7000
+WHERE subject_id = 5;
+
+SELECT * FROM subject;
+
+DELETE FROM subject
+WHERE subject_id = 4;
+
+SELECT * FROM subject;
+
+DELETE FROM subject
+WHERE subject_id = 5;
+
+SELECT * FROM subject;
+
+DELETE FROM subject
+WHERE subject_id = 2;
+
+SELECT * FROM subject;
+
+-- ______________________________________________________________________________________________________
