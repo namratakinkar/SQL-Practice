@@ -752,3 +752,49 @@ SELECT * FROM loan_details;
 DROP TABLE loan_details;
 
 -- ____________________________________________________________________________________________________
+
+-- Example 21 :- SUBJECT TABLE
+
+CREATE TABLE subject(
+    subject_id INT,
+    subject_name VARCHAR(50),
+    subject_code INT,
+    teacher_name VARCHAR(50),
+    subject_fee INT
+);
+
+SELECT * FROM subject;
+
+ALTER TABLE subject
+ADD COLUMN subject_duration VARCHAR(50);
+
+ALTER TABLE subject
+RENAME COLUMN subject_fee TO fee;
+
+ALTER TABLE subject
+RENAME COLUMN teacher_name TO faculty_name;
+
+ALTER TABLE subject
+RENAME COLUMN subject_code TO code;
+
+ALTER TABLE subject
+ALTER COLUMN subject_name TYPE VARCHAR(100);
+
+ALTER TABLE subject
+ALTER COLUMN faculty_name TYPE VARCHAR(100);
+
+ALTER TABLE subject
+DROP COLUMN subject_duration;
+
+ALTER TABLE subject
+RENAME TO subject_details;
+
+SELECT * FROM subject_details;
+
+TRUNCATE TABLE subject_details;
+
+SELECT * FROM subject_details;
+
+DROP TABLE subject_details;
+
+-- ________________________________________________________________________________________________________-
