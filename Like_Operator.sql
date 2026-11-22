@@ -1161,3 +1161,102 @@ WHERE customer_name LIKE '%avit%';
 -- =====================================================
 -- END OF HOUSE TABLE EXAMPLE
 -- =====================================================
+
+-- =====================================================
+-- Example 11 :- SUBJECT TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+-- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE subject(
+    subject_id INT,
+    subject_name VARCHAR(100),
+    subject_code INT,
+    teacher_name VARCHAR(100),
+    subject_fee INT,
+    subject_type VARCHAR(50)
+);
+
+-- INSERT DATA (DML COMMAND)
+
+INSERT INTO subject(subject_id, subject_name, subject_code, teacher_name, subject_fee, subject_type)
+VALUES
+(1, 'Python', 101, 'Amit Sharma', 5000, 'Programming'),
+(2, 'Java', 102, 'Priya Verma', 4500, 'Programming'),
+(3, 'SQL', 103, 'Rahul Patel', 3000, 'Database'),
+(4, 'C Programming', 104, 'Neha Singh', 3500, 'Programming'),
+(5, 'Web Development', 105, 'Rohit Kumar', 6000, 'Development'),
+(6, 'HTML', 106, 'Pooja Gupta', 2000, 'Development'),
+(7, 'CSS', 107, 'Vikas Yadav', 2500, 'Development'),
+(8, 'JavaScript', 108, 'Anjali Mehta', 4000, 'Programming'),
+(9, 'MySQL', 109, 'Suresh Jain', 3500, 'Database'),
+(10, 'C++', 110, 'Kavita Joshi', 3000, 'Programming'),
+(11, 'PHP', 111, 'Deepak Verma', 4500, 'Development'),
+(12, 'Database', 112, 'Sneha Patel', 5000, 'Database'),
+(13, 'Django', 113, 'Manish Sharma', 5500, 'Development'),
+(14, 'React', 114, 'Riya Agarwal', 6000, 'Development'),
+(15, 'Data Science', 115, 'Karan Malhotra', 7000, 'Technology');
+
+-- DISPLAY DATA (DQL COMMAND)
+
+SELECT * FROM subject;
+
+
+-- LIKE OPERATOR (A%) STARTS WITH A
+
+SELECT * FROM subject
+WHERE subject_name LIKE 'P%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE 'J%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE 'C%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE 'D%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE 'M%';
+
+
+-- LIKE OPERATOR (%a) ENDS WITH A
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%a';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%n';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%L';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%t';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%e';
+
+
+-- LIKE OPERATOR (%ab%) SUBSTRING
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%oo%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%av%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%at%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%en%';
+
+SELECT * FROM subject
+WHERE subject_name LIKE '%Sc%';
+
+
+-- =====================================================
+-- END OF SUBJECT TABLE EXAMPLE
+-- =====================================================
