@@ -460,3 +460,99 @@ ON loan.loan_id = loan_customer.loan_id;
 -- =====================================================
 -- END OF CUSTOMER AND CUSTOMER_ORDER TABLE
 -- =====================================================
+
+-- =====================================================
+-- Example 6 :- SUBJECT AND SUBJECT_TEACHER TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+CREATE TABLE subject(
+    subject_id INT,
+    subject_name VARCHAR(50),
+    subject_code INT
+);
+
+SELECT * FROM subject;
+
+INSERT INTO subject(subject_id, subject_name, subject_code)
+VALUES
+(1, 'Python', 101),
+(2, 'Java', 102),
+(3, 'SQL', 103),
+(4, 'C Programming', 104),
+(5, 'Web Development', 105);
+
+SELECT * FROM subject;
+
+CREATE TABLE subject_teacher(
+    subject_id INT,
+    teacher_name VARCHAR(50),
+    subject_fee INT
+);
+
+SELECT * FROM subject_teacher;
+
+INSERT INTO subject_teacher(subject_id, teacher_name, subject_fee)
+VALUES
+(1, 'Amit Sharma', 5000),
+(2, 'Priya Verma', 4500),
+(3, 'Rahul Patel', 3000),
+(5, 'Neha Singh', 6000),
+(6, 'Rohit Kumar', 3500);
+
+SELECT * FROM subject_teacher;
+
+
+-- LEFT JOIN (ALL RECORDS FROM LEFT TABLE)
+
+SELECT
+    subject.subject_id,
+    subject.subject_name,
+    subject.subject_code,
+    subject_teacher.teacher_name,
+    subject_teacher.subject_fee
+FROM subject
+LEFT JOIN subject_teacher
+ON subject.subject_id = subject_teacher.subject_id;
+
+
+-- RIGHT JOIN (ALL RECORDS FROM RIGHT TABLE)
+
+SELECT
+    subject.subject_id,
+    subject.subject_name,
+    subject.subject_code,
+    subject_teacher.teacher_name,
+    subject_teacher.subject_fee
+FROM subject
+RIGHT JOIN subject_teacher
+ON subject.subject_id = subject_teacher.subject_id;
+
+
+-- INNER JOIN (ONLY MATCHED RECORDS)
+
+SELECT
+    subject.subject_id,
+    subject.subject_name,
+    subject.subject_code,
+    subject_teacher.teacher_name,
+    subject_teacher.subject_fee
+FROM subject
+INNER JOIN subject_teacher
+ON subject.subject_id = subject_teacher.subject_id;
+
+
+-- FULL OUTER JOIN (ALL MATCHED AND UNMATCHED RECORDS)
+
+SELECT
+    subject.subject_id,
+    subject.subject_name,
+    subject.subject_code,
+    subject_teacher.teacher_name,
+    subject_teacher.subject_fee
+FROM subject
+FULL OUTER JOIN subject_teacher
+ON subject.subject_id = subject_teacher.subject_id;
+
+
+-- ______________________________________________________________________________________________________
