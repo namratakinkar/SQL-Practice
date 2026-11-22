@@ -1877,3 +1877,222 @@ SELECT * FROM loan_details;
 DROP TABLE loan_details;
 
 -- ___________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 14 :- SUBJECT TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE subject(
+    subject_id INT,
+    subject_name VARCHAR(50),
+    subject_code INT,
+    teacher_name VARCHAR(50),
+    subject_fee INT
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM subject;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO subject(subject_id, subject_name, subject_code, teacher_name, subject_fee)
+VALUES
+(1, 'Python', 101, 'Amit Sharma', 5000),
+(2, 'Java', 102, 'Neha Verma', 4500),
+(3, 'SQL', 103, 'Rahul Patel', 3000),
+(4, 'C Programming', 104, 'Priya Singh', 3500),
+(5, 'Web Development', 105, 'Ankit Kumar', 6000);
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM subject;
+
+
+-- STEP 5 :- UPDATE SUBJECT NAME (DML COMMAND)
+
+UPDATE subject
+SET subject_name = 'Advanced Python'
+WHERE subject_id = 1;
+
+SELECT * FROM subject;
+
+
+-- STEP 6 :- UPDATE TEACHER NAME (DML COMMAND)
+
+UPDATE subject
+SET teacher_name = 'Pooja Verma'
+WHERE subject_id = 2;
+
+SELECT * FROM subject;
+
+
+-- STEP 7 :- UPDATE SUBJECT CODE (DML COMMAND)
+
+UPDATE subject
+SET subject_code = 110
+WHERE subject_id = 3;
+
+SELECT * FROM subject;
+
+
+-- STEP 8 :- UPDATE SUBJECT FEE (DML COMMAND)
+
+UPDATE subject
+SET subject_fee = 4000
+WHERE subject_id = 4;
+
+SELECT * FROM subject;
+
+
+-- STEP 9 :- UPDATE SUBJECT FEE (DML COMMAND)
+
+UPDATE subject
+SET subject_fee = 7000
+WHERE subject_id = 5;
+
+SELECT * FROM subject;
+
+
+-- STEP 10 :- DELETE SUBJECT RECORD (DML COMMAND)
+
+DELETE FROM subject
+WHERE subject_id = 4;
+
+SELECT * FROM subject;
+
+
+-- STEP 11 :- DELETE ANOTHER SUBJECT RECORD (DML COMMAND)
+
+DELETE FROM subject
+WHERE subject_id = 5;
+
+SELECT * FROM subject;
+
+
+-- STEP 12 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE subject
+ADD COLUMN subject_duration VARCHAR(50);
+
+SELECT * FROM subject;
+
+
+-- STEP 13 :- UPDATE SUBJECT DURATION (DML COMMAND)
+
+UPDATE subject
+SET subject_duration = '6 Months'
+WHERE subject_id = 1;
+
+SELECT * FROM subject;
+
+
+-- STEP 14 :- UPDATE SUBJECT DURATION (DML COMMAND)
+
+UPDATE subject
+SET subject_duration = '4 Months'
+WHERE subject_id = 2;
+
+SELECT * FROM subject;
+
+
+-- STEP 15 :- UPDATE SUBJECT DURATION (DML COMMAND)
+
+UPDATE subject
+SET subject_duration = '3 Months'
+WHERE subject_id = 3;
+
+SELECT * FROM subject;
+
+
+-- STEP 16 :- RENAME SUBJECT_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE subject
+RENAME COLUMN subject_name TO name;
+
+SELECT * FROM subject;
+
+
+-- STEP 17 :- RENAME TEACHER_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE subject
+RENAME COLUMN teacher_name TO faculty_name;
+
+SELECT * FROM subject;
+
+
+-- STEP 18 :- RENAME SUBJECT_DURATION COLUMN (DDL COMMAND)
+
+ALTER TABLE subject
+RENAME COLUMN subject_duration TO duration;
+
+SELECT * FROM subject;
+
+
+-- STEP 19 :- CHANGE NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE subject
+ALTER COLUMN name TYPE VARCHAR(100);
+
+SELECT * FROM subject;
+
+
+-- STEP 20 :- CHANGE FACULTY_NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE subject
+ALTER COLUMN faculty_name TYPE VARCHAR(100);
+
+SELECT * FROM subject;
+
+
+-- STEP 21 :- CHANGE DURATION DATA TYPE (DDL COMMAND)
+
+ALTER TABLE subject
+ALTER COLUMN duration TYPE VARCHAR(100);
+
+SELECT * FROM subject;
+
+
+-- STEP 22 :- DROP DURATION COLUMN (DDL COMMAND)
+
+ALTER TABLE subject
+DROP COLUMN duration;
+
+SELECT * FROM subject;
+
+
+-- STEP 23 :- DROP SUBJECT_CODE COLUMN (DDL COMMAND)
+
+ALTER TABLE subject
+DROP COLUMN subject_code;
+
+SELECT * FROM subject;
+
+
+-- STEP 24 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE subject
+RENAME TO subject_details;
+
+SELECT * FROM subject_details;
+
+
+-- STEP 25 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE subject_details;
+
+SELECT * FROM subject_details;
+
+
+-- STEP 26 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE subject_details;
+
+-- _____________________________________________________________________________________________________________________________
