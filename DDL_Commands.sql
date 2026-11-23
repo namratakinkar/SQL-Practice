@@ -798,3 +798,51 @@ SELECT * FROM subject_details;
 DROP TABLE subject_details;
 
 -- ________________________________________________________________________________________________________-
+
+-- Example 22 :- SHOP TABLE
+
+CREATE TABLE shop(
+    shop_id INT,
+    shop_name VARCHAR(50),
+    owner_name VARCHAR(50),
+    shop_type VARCHAR(50),
+    shop_mobile BIGINT,
+    shop_address VARCHAR(100),
+    shop_income INT
+);
+
+SELECT * FROM shop;
+
+ALTER TABLE shop
+ADD COLUMN shop_email VARCHAR(100);
+
+ALTER TABLE shop
+RENAME COLUMN shop_income TO income;
+
+ALTER TABLE shop
+RENAME COLUMN owner_name TO shop_owner;
+
+ALTER TABLE shop
+RENAME COLUMN shop_type TO category;
+
+ALTER TABLE shop
+ALTER COLUMN shop_name TYPE VARCHAR(100);
+
+ALTER TABLE shop
+ALTER COLUMN shop_owner TYPE VARCHAR(100);
+
+ALTER TABLE shop
+DROP COLUMN shop_email;
+
+ALTER TABLE shop
+RENAME TO shop_details;
+
+SELECT * FROM shop_details;
+
+TRUNCATE TABLE shop_details;
+
+SELECT * FROM shop_details;
+
+DROP TABLE shop_details;
+
+-- ________________________________________________________________________________________________________-
