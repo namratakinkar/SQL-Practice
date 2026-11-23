@@ -556,3 +556,111 @@ ON subject.subject_id = subject_teacher.subject_id;
 
 
 -- ______________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 7 :- SHOP AND SHOP_EMPLOYEE TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE SHOP TABLE
+
+CREATE TABLE shop(
+    shop_id INT,
+    shop_name VARCHAR(50),
+    shop_type VARCHAR(50)
+);
+
+SELECT * FROM shop;
+
+
+-- STEP 2 :- INSERT DATA INTO SHOP TABLE
+
+INSERT INTO shop(shop_id, shop_name, shop_type)
+VALUES
+(1, 'Fashion Store', 'Clothing'),
+(2, 'Fresh Mart', 'Grocery'),
+(3, 'Mobile World', 'Electronics'),
+(4, 'Book House', 'Books'),
+(5, 'Royal Footwear', 'Footwear');
+
+SELECT * FROM shop;
+
+
+-- STEP 3 :- CREATE SHOP_EMPLOYEE TABLE
+
+CREATE TABLE shop_employee(
+    shop_id INT,
+    employee_name VARCHAR(50),
+    employee_salary INT
+);
+
+SELECT * FROM shop_employee;
+
+
+-- STEP 4 :- INSERT DATA INTO SHOP_EMPLOYEE TABLE
+
+INSERT INTO shop_employee(shop_id, employee_name, employee_salary)
+VALUES
+(1, 'Rahul Sharma', 25000),
+(2, 'Amit Verma', 20000),
+(3, 'Neha Singh', 30000),
+(5, 'Priya Patel', 22000),
+(6, 'Rohit Kumar', 18000);
+
+SELECT * FROM shop_employee;
+
+
+-- STEP 5 :- LEFT JOIN (ALL RECORDS FROM LEFT TABLE)
+
+SELECT
+    shop.shop_id,
+    shop.shop_name,
+    shop.shop_type,
+    shop_employee.employee_name,
+    shop_employee.employee_salary
+FROM shop
+LEFT JOIN shop_employee
+ON shop.shop_id = shop_employee.shop_id;
+
+
+-- STEP 6 :- RIGHT JOIN (ALL RECORDS FROM RIGHT TABLE)
+
+SELECT
+    shop.shop_id,
+    shop.shop_name,
+    shop.shop_type,
+    shop_employee.employee_name,
+    shop_employee.employee_salary
+FROM shop
+RIGHT JOIN shop_employee
+ON shop.shop_id = shop_employee.shop_id;
+
+
+-- STEP 7 :- INNER JOIN (ONLY MATCHED RECORDS)
+
+SELECT
+    shop.shop_id,
+    shop.shop_name,
+    shop.shop_type,
+    shop_employee.employee_name,
+    shop_employee.employee_salary
+FROM shop
+INNER JOIN shop_employee
+ON shop.shop_id = shop_employee.shop_id;
+
+
+-- STEP 8 :- FULL OUTER JOIN (ALL MATCHED AND UNMATCHED RECORDS)
+
+SELECT
+    shop.shop_id,
+    shop.shop_name,
+    shop.shop_type,
+    shop_employee.employee_name,
+    shop_employee.employee_salary
+FROM shop
+FULL OUTER JOIN shop_employee
+ON shop.shop_id = shop_employee.shop_id;
+
+
+-- ______________________________________________________________________________________________________
