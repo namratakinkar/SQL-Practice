@@ -2096,3 +2096,225 @@ SELECT * FROM subject_details;
 DROP TABLE subject_details;
 
 -- _____________________________________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 15 :- SHOP TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE shop(
+    shop_id INT,
+    shop_name VARCHAR(50),
+    owner_name VARCHAR(50),
+    shop_type VARCHAR(50),
+    shop_mobile BIGINT,
+    shop_address VARCHAR(100),
+    shop_income INT
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM shop;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO shop(shop_id, shop_name, owner_name, shop_type, shop_mobile, shop_address, shop_income)
+VALUES
+(1, 'Fashion Store', 'Rahul Sharma', 'Clothing', 9876543210, 'Bhopal', 50000),
+(2, 'Fresh Mart', 'Amit Verma', 'Grocery', 9876543211, 'Indore', 40000),
+(3, 'Mobile World', 'Neha Singh', 'Electronics', 9876543212, 'Delhi', 75000),
+(4, 'Book House', 'Priya Patel', 'Books', 9876543213, 'Mumbai', 30000),
+(5, 'Royal Footwear', 'Ankit Kumar', 'Footwear', 9876543214, 'Pune', 60000);
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM shop;
+
+
+-- STEP 5 :- UPDATE SHOP NAME (DML COMMAND)
+
+UPDATE shop
+SET shop_name = 'New Fashion Store'
+WHERE shop_id = 1;
+
+SELECT * FROM shop;
+
+
+-- STEP 6 :- UPDATE OWNER NAME (DML COMMAND)
+
+UPDATE shop
+SET owner_name = 'Pooja Verma'
+WHERE shop_id = 2;
+
+SELECT * FROM shop;
+
+
+-- STEP 7 :- UPDATE SHOP TYPE (DML COMMAND)
+
+UPDATE shop
+SET shop_type = 'Mobile Accessories'
+WHERE shop_id = 3;
+
+SELECT * FROM shop;
+
+
+-- STEP 8 :- UPDATE SHOP INCOME (DML COMMAND)
+
+UPDATE shop
+SET shop_income = 35000
+WHERE shop_id = 4;
+
+SELECT * FROM shop;
+
+
+-- STEP 9 :- UPDATE SHOP INCOME (DML COMMAND)
+
+UPDATE shop
+SET shop_income = 80000
+WHERE shop_id = 5;
+
+SELECT * FROM shop;
+
+
+-- STEP 10 :- DELETE SHOP RECORD (DML COMMAND)
+
+DELETE FROM shop
+WHERE shop_id = 4;
+
+SELECT * FROM shop;
+
+
+-- STEP 11 :- DELETE ANOTHER SHOP RECORD (DML COMMAND)
+
+DELETE FROM shop
+WHERE shop_id = 5;
+
+SELECT * FROM shop;
+
+
+-- STEP 12 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE shop
+ADD COLUMN shop_email VARCHAR(100);
+
+SELECT * FROM shop;
+
+
+-- STEP 13 :- UPDATE SHOP EMAIL (DML COMMAND)
+
+UPDATE shop
+SET shop_email = 'fashion@gmail.com'
+WHERE shop_id = 1;
+
+SELECT * FROM shop;
+
+
+-- STEP 14 :- UPDATE SHOP EMAIL (DML COMMAND)
+
+UPDATE shop
+SET shop_email = 'freshmart@gmail.com'
+WHERE shop_id = 2;
+
+SELECT * FROM shop;
+
+
+-- STEP 15 :- UPDATE SHOP EMAIL (DML COMMAND)
+
+UPDATE shop
+SET shop_email = 'mobileworld@gmail.com'
+WHERE shop_id = 3;
+
+SELECT * FROM shop;
+
+
+-- STEP 16 :- RENAME SHOP_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE shop
+RENAME COLUMN shop_name TO name;
+
+SELECT * FROM shop;
+
+
+-- STEP 17 :- RENAME OWNER_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE shop
+RENAME COLUMN owner_name TO shop_owner;
+
+SELECT * FROM shop;
+
+
+-- STEP 18 :- RENAME SHOP_TYPE COLUMN (DDL COMMAND)
+
+ALTER TABLE shop
+RENAME COLUMN shop_type TO category;
+
+SELECT * FROM shop;
+
+
+-- STEP 19 :- CHANGE NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE shop
+ALTER COLUMN name TYPE VARCHAR(100);
+
+SELECT * FROM shop;
+
+
+-- STEP 20 :- CHANGE SHOP_OWNER DATA TYPE (DDL COMMAND)
+
+ALTER TABLE shop
+ALTER COLUMN shop_owner TYPE VARCHAR(100);
+
+SELECT * FROM shop;
+
+
+-- STEP 21 :- CHANGE CATEGORY DATA TYPE (DDL COMMAND)
+
+ALTER TABLE shop
+ALTER COLUMN category TYPE VARCHAR(100);
+
+SELECT * FROM shop;
+
+
+-- STEP 22 :- DROP SHOP_EMAIL COLUMN (DDL COMMAND)
+
+ALTER TABLE shop
+DROP COLUMN shop_email;
+
+SELECT * FROM shop;
+
+
+-- STEP 23 :- DROP SHOP_ADDRESS COLUMN (DDL COMMAND)
+
+ALTER TABLE shop
+DROP COLUMN shop_address;
+
+SELECT * FROM shop;
+
+
+-- STEP 24 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE shop
+RENAME TO shop_details;
+
+SELECT * FROM shop_details;
+
+
+-- STEP 25 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE shop_details;
+
+SELECT * FROM shop_details;
+
+
+-- STEP 26 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE shop_details;
+
+
+-- ________________________________________________________________________________________________________________
