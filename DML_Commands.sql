@@ -737,3 +737,62 @@ WHERE subject_id = 2;
 SELECT * FROM subject;
 
 -- ______________________________________________________________________________________________________
+
+-- Example 22 :- SHOP TABLE
+
+INSERT INTO shop(shop_id, shop_name, owner_name, shop_type, shop_mobile, shop_address, shop_income)
+VALUES
+(1, 'Fashion Store', 'Rahul Sharma', 'Clothing', 9876543210, 'Bhopal', 50000),
+(2, 'Fresh Mart', 'Amit Verma', 'Grocery', 9876543211, 'Indore', 40000),
+(3, 'Mobile World', 'Neha Singh', 'Electronics', 9876543212, 'Delhi', 75000),
+(4, 'Book House', 'Priya Patel', 'Books', 9876543213, 'Mumbai', 30000),
+(5, 'Royal Footwear', 'Ankit Kumar', 'Footwear', 9876543214, 'Pune', 60000);
+
+SELECT * FROM shop;
+
+UPDATE shop
+SET shop_name = 'New Fashion Store'
+WHERE shop_id = 1;
+
+SELECT * FROM shop;
+
+UPDATE shop
+SET owner_name = 'Pooja Verma'
+WHERE shop_id = 2;
+
+SELECT * FROM shop;
+
+UPDATE shop
+SET shop_type = 'Mobile Accessories'
+WHERE shop_id = 3;
+
+SELECT * FROM shop;
+
+UPDATE shop
+SET shop_income = 35000
+WHERE shop_id = 4;
+
+SELECT * FROM shop;
+
+UPDATE shop
+SET shop_income = 80000
+WHERE shop_id = 5;
+
+SELECT * FROM shop;
+
+DELETE FROM shop
+WHERE shop_id = 4;
+
+SELECT * FROM shop;
+
+DELETE FROM shop
+WHERE shop_id = 5;
+
+SELECT * FROM shop;
+
+DELETE FROM shop
+WHERE shop_id = 2;
+
+SELECT * FROM shop;
+
+-- ______________________________________________________________________________________________________
