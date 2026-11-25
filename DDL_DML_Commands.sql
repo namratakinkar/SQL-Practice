@@ -2318,3 +2318,225 @@ DROP TABLE shop_details;
 
 
 -- ________________________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 16 :- HOSPITAL_DOCTOR TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE hospital_doctor(
+    doctor_id INT,
+    doctor_name VARCHAR(50),
+    specialization VARCHAR(50),
+    doctor_mobile BIGINT,
+    doctor_address VARCHAR(100),
+    doctor_salary INT
+);
+
+
+-- STEP 2 :- DISPLAY TABLE DATA (DQL COMMAND)
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 3 :- INSERT DATA (DML COMMAND)
+
+INSERT INTO hospital_doctor(doctor_id, doctor_name, specialization, doctor_mobile, doctor_address, doctor_salary)
+VALUES
+(1, 'Amit Sharma', 'Cardiologist', 9876543210, 'Bhopal', 80000),
+(2, 'Priya Verma', 'Neurologist', 9876543211, 'Indore', 75000),
+(3, 'Rahul Singh', 'Dentist', 9876543212, 'Delhi', 60000),
+(4, 'Neha Patel', 'Dermatologist', 9876543213, 'Mumbai', 70000),
+(5, 'Rohit Kumar', 'Orthopedic', 9876543214, 'Pune', 85000);
+
+
+-- STEP 4 :- DISPLAY INSERTED DATA (DQL COMMAND)
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 5 :- UPDATE DOCTOR NAME (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_name = 'Pooja Sharma'
+WHERE doctor_id = 1;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 6 :- UPDATE SPECIALIZATION (DML COMMAND)
+
+UPDATE hospital_doctor
+SET specialization = 'Pediatrician'
+WHERE doctor_id = 2;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 7 :- UPDATE DOCTOR ADDRESS (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_address = 'Jaipur'
+WHERE doctor_id = 3;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 8 :- UPDATE DOCTOR SALARY (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_salary = 75000
+WHERE doctor_id = 4;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 9 :- UPDATE DOCTOR SALARY (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_salary = 95000
+WHERE doctor_id = 5;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 10 :- DELETE DOCTOR RECORD (DML COMMAND)
+
+DELETE FROM hospital_doctor
+WHERE doctor_id = 4;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 11 :- DELETE ANOTHER DOCTOR RECORD (DML COMMAND)
+
+DELETE FROM hospital_doctor
+WHERE doctor_id = 5;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 12 :- ADD NEW COLUMN (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+ADD COLUMN doctor_email VARCHAR(100);
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 13 :- UPDATE DOCTOR EMAIL (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_email = 'amit@gmail.com'
+WHERE doctor_id = 1;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 14 :- UPDATE DOCTOR EMAIL (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_email = 'priya@gmail.com'
+WHERE doctor_id = 2;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 15 :- UPDATE DOCTOR EMAIL (DML COMMAND)
+
+UPDATE hospital_doctor
+SET doctor_email = 'rahul@gmail.com'
+WHERE doctor_id = 3;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 16 :- RENAME DOCTOR_NAME COLUMN (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+RENAME COLUMN doctor_name TO doctor_full_name;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 17 :- RENAME SPECIALIZATION COLUMN (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+RENAME COLUMN specialization TO department;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 18 :- RENAME DOCTOR_ADDRESS COLUMN (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+RENAME COLUMN doctor_address TO city;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 19 :- CHANGE DOCTOR_FULL_NAME DATA TYPE (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+ALTER COLUMN doctor_full_name TYPE VARCHAR(100);
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 20 :- CHANGE DEPARTMENT DATA TYPE (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+ALTER COLUMN department TYPE VARCHAR(100);
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 21 :- CHANGE CITY DATA TYPE (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+ALTER COLUMN city TYPE VARCHAR(150);
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 22 :- DROP DOCTOR_EMAIL COLUMN (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+DROP COLUMN doctor_email;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 23 :- DROP CITY COLUMN (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+DROP COLUMN city;
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 24 :- RENAME TABLE (DDL COMMAND)
+
+ALTER TABLE hospital_doctor
+RENAME TO hospital_doctor_details;
+
+SELECT * FROM hospital_doctor_details;
+
+
+-- STEP 25 :- DELETE ALL TABLE RECORDS (DDL COMMAND)
+
+TRUNCATE TABLE hospital_doctor_details;
+
+SELECT * FROM hospital_doctor_details;
+
+
+-- STEP 26 :- DROP TABLE (DDL COMMAND)
+
+DROP TABLE hospital_doctor_details;
+
+
+-- ________________________________________________________________________________________________________________
