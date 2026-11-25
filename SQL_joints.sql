@@ -664,3 +664,114 @@ ON shop.shop_id = shop_employee.shop_id;
 
 
 -- ______________________________________________________________________________________________________
+
+
+-- =====================================================
+-- Example 8 :- HOSPITAL AND HOSPITAL_DOCTOR TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE HOSPITAL TABLE
+
+CREATE TABLE hospital(
+    hospital_id INT,
+    hospital_name VARCHAR(50),
+    hospital_city VARCHAR(50)
+);
+
+SELECT * FROM hospital;
+
+
+-- STEP 2 :- INSERT DATA INTO HOSPITAL TABLE
+
+INSERT INTO hospital(hospital_id, hospital_name, hospital_city)
+VALUES
+(1, 'City Hospital', 'Gwalior'),
+(2, 'Life Care Hospital', 'Delhi'),
+(3, 'Sunrise Hospital', 'Mumbai'),
+(4, 'Apex Hospital', 'Bhopal'),
+(5, 'Medicare Hospital', 'Jaipur');
+
+SELECT * FROM hospital;
+
+
+-- STEP 3 :- CREATE HOSPITAL_DOCTOR TABLE
+
+CREATE TABLE hospital_doctor(
+    hospital_id INT,
+    doctor_name VARCHAR(50),
+    doctor_salary INT
+);
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 4 :- INSERT DATA INTO HOSPITAL_DOCTOR TABLE
+
+INSERT INTO hospital_doctor(hospital_id, doctor_name, doctor_salary)
+VALUES
+(1, 'Dr. Amit Sharma', 80000),
+(2, 'Dr. Priya Verma', 75000),
+(3, 'Dr. Rahul Patel', 90000),
+(5, 'Dr. Neha Singh', 85000),
+(6, 'Dr. Rohit Kumar', 70000);
+
+SELECT * FROM hospital_doctor;
+
+
+-- STEP 5 :- LEFT JOIN (ALL RECORDS FROM LEFT TABLE)
+
+SELECT
+    hospital.hospital_id,
+    hospital.hospital_name,
+    hospital.hospital_city,
+    hospital_doctor.doctor_name,
+    hospital_doctor.doctor_salary
+FROM hospital
+LEFT JOIN hospital_doctor
+ON hospital.hospital_id = hospital_doctor.hospital_id;
+
+
+-- STEP 6 :- RIGHT JOIN (ALL RECORDS FROM RIGHT TABLE)
+
+SELECT
+    hospital.hospital_id,
+    hospital.hospital_name,
+    hospital.hospital_city,
+    hospital_doctor.doctor_name,
+    hospital_doctor.doctor_salary
+FROM hospital
+RIGHT JOIN hospital_doctor
+ON hospital.hospital_id = hospital_doctor.hospital_id;
+
+
+-- STEP 7 :- INNER JOIN (ONLY MATCHED RECORDS)
+
+SELECT
+    hospital.hospital_id,
+    hospital.hospital_name,
+    hospital.hospital_city,
+    hospital_doctor.doctor_name,
+    hospital_doctor.doctor_salary
+FROM hospital
+INNER JOIN hospital_doctor
+ON hospital.hospital_id = hospital_doctor.hospital_id;
+
+
+-- STEP 8 :- FULL OUTER JOIN (ALL MATCHED AND UNMATCHED RECORDS)
+
+SELECT
+    hospital.hospital_id,
+    hospital.hospital_name,
+    hospital.hospital_city,
+    hospital_doctor.doctor_name,
+    hospital_doctor.doctor_salary
+FROM hospital
+FULL OUTER JOIN hospital_doctor
+ON hospital.hospital_id = hospital_doctor.hospital_id;
+
+
+-- =====================================================
+-- END OF HOSPITAL AND HOSPITAL_DOCTOR TABLE EXAMPLE
+-- =====================================================
