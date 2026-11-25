@@ -796,3 +796,61 @@ WHERE shop_id = 2;
 SELECT * FROM shop;
 
 -- ______________________________________________________________________________________________________
+
+
+INSERT INTO hospital_doctor(doctor_id, doctor_name, specialization, doctor_mobile, doctor_address, doctor_salary)
+VALUES
+(1, 'Amit Sharma', 'Cardiologist', 9876543210, 'Bhopal', 80000),
+(2, 'Priya Verma', 'Neurologist', 9876543211, 'Indore', 75000),
+(3, 'Rahul Singh', 'Dentist', 9876543212, 'Delhi', 60000),
+(4, 'Neha Patel', 'Dermatologist', 9876543213, 'Mumbai', 70000),
+(5, 'Rohit Kumar', 'Orthopedic', 9876543214, 'Pune', 85000);
+
+SELECT * FROM hospital_doctor;
+
+UPDATE hospital_doctor
+SET doctor_name = 'Pooja Sharma'
+WHERE doctor_id = 1;
+
+SELECT * FROM hospital_doctor;
+
+UPDATE hospital_doctor
+SET specialization = 'Pediatrician'
+WHERE doctor_id = 2;
+
+SELECT * FROM hospital_doctor;
+
+UPDATE hospital_doctor
+SET doctor_address = 'Jaipur'
+WHERE doctor_id = 3;
+
+SELECT * FROM hospital_doctor;
+
+UPDATE hospital_doctor
+SET doctor_salary = 75000
+WHERE doctor_id = 4;
+
+SELECT * FROM hospital_doctor;
+
+UPDATE hospital_doctor
+SET doctor_salary = 95000
+WHERE doctor_id = 5;
+
+SELECT * FROM hospital_doctor;
+
+DELETE FROM hospital_doctor
+WHERE doctor_id = 4;
+
+SELECT * FROM hospital_doctor;
+
+DELETE FROM hospital_doctor
+WHERE doctor_id = 5;
+
+SELECT * FROM hospital_doctor;
+
+DELETE FROM hospital_doctor
+WHERE doctor_id = 2;
+
+SELECT * FROM hospital_doctor;
+
+-- ___________________________________________________________________________________________________________
