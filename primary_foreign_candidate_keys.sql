@@ -77,36 +77,6 @@ SELECT * FROM library;
 -- 5. NULL values are allowed in a FOREIGN KEY unless NOT NULL is specified.
 
 
--- =====================================================
--- PRIMARY KEY
--- =====================================================
-
--- 1. It is always UNIQUE.
--- 2. It cannot contain NULL values.
--- 3. Only one PRIMARY KEY constraint can exist in a table.
--- 4. A PRIMARY KEY can contain multiple columns (Composite Primary Key).
-
-
--- =====================================================
--- CANDIDATE KEY
--- =====================================================
-
--- 1. It is always UNIQUE.
--- 2. It cannot contain NULL values.
--- 3. A table can have multiple CANDIDATE KEYS.
--- 4. Any candidate key can be selected as a PRIMARY KEY.
-
-
--- =====================================================
--- FOREIGN KEY
--- =====================================================
-
--- 1. It is used to create a relationship between two tables.
--- 2. It references a PRIMARY KEY or UNIQUE key in another table.
--- 3. It helps maintain referential integrity.
--- 4. Duplicate values can exist in a FOREIGN KEY.
--- 5. NULL values are allowed in a FOREIGN KEY unless NOT NULL is specified.
-
 
 -- =====================================================
 -- SUBJECT TABLE
@@ -200,6 +170,105 @@ SELECT
 FROM subject
 INNER JOIN subject_teacher
 ON subject.subject_id = subject_teacher.subject_id;
+
+-- ___________________________________________________________________________________________________________
+
+
+-- =====================================================
+-- SHOP TABLE
+-- PRIMARY KEY, CANDIDATE KEY AND FOREIGN KEY
+-- =====================================================
+
+
+-- =====================================================
+-- STEP 1 :- SHOP TABLE
+-- =====================================================
+
+CREATE TABLE shop(
+    product_id INT PRIMARY KEY,
+    product_code INT UNIQUE,
+    product_name VARCHAR(50),
+    product_price INT
+);
+
+-- product_id IS PRIMARY KEY
+-- product_id IS ALSO A CANDIDATE KEY
+-- product_code IS CANDIDATE KEY
+-- product_code IS ALSO AN ALTERNATE KEY
+-- product_code IS UNIQUE KEY
+
+
+-- INSERT DATA INTO SHOP TABLE
+
+INSERT INTO shop(product_id, product_code, product_name, product_price)
+VALUES
+(101, 1001, 'Laptop', 45000),
+(102, 1002, 'Mobile', 15000),
+(103, 1003, 'Keyboard', 1200),
+(104, 1004, 'Mouse', 500),
+(105, 1005, 'Monitor', 12000);
+
+
+-- DISPLAY SHOP TABLE
+
+SELECT * FROM shop;
+
+
+-- =====================================================
+-- STEP 2 :- SHOP_CUSTOMER TABLE
+-- =====================================================
+
+CREATE TABLE shop_customer(
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(50),
+    product_id INT,
+    customer_mobile VARCHAR(10) UNIQUE,
+    FOREIGN KEY (product_id) REFERENCES shop(product_id)
+);
+
+-- customer_id IS PRIMARY KEY
+-- customer_id IS ALSO A CANDIDATE KEY
+-- customer_mobile IS CANDIDATE KEY
+-- customer_mobile IS ALSO AN ALTERNATE KEY
+-- customer_mobile IS UNIQUE KEY
+-- product_id IS FOREIGN KEY
+-- product_id REFERENCES product_id OF SHOP TABLE
+
+
+-- INSERT DATA INTO SHOP_CUSTOMER TABLE
+
+INSERT INTO shop_customer(customer_id, customer_name, product_id, customer_mobile)
+VALUES
+(201, 'Amit Sharma', 101, '8172262622'),
+(202, 'Priya Verma', 102, '9272726253'),
+(203, 'Rahul Patel', 103, '8172262623'),
+(204, 'Neha Singh', 104, '9272726254'),
+(205, 'Rohit Kumar', 105, '8172262624');
+
+
+-- DISPLAY SHOP_CUSTOMER TABLE
+
+SELECT * FROM shop_customer;
+
+
+-- =====================================================
+-- STEP 3 :- JOIN BOTH TABLES
+-- =====================================================
+
+SELECT
+    shop.product_id,
+    shop.product_name,
+    shop.product_code,
+    shop.product_price,
+    shop_customer.customer_id,
+    shop_customer.customer_name,
+    shop_customer.customer_mobile
+FROM shop
+INNER JOIN shop_customer
+ON shop.product_id = shop_customer.product_id;
+
+
+
 
 
 -- =====================================================
