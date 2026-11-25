@@ -268,6 +268,105 @@ INNER JOIN shop_customer
 ON shop.product_id = shop_customer.product_id;
 
 
+-- _____________________________________________________________________________________________________
+
+
+-- =====================================================
+-- HOSPITAL TABLE
+-- PRIMARY KEY, CANDIDATE KEY AND FOREIGN KEY
+-- =====================================================
+
+
+-- =====================================================
+-- STEP 1 :- HOSPITAL TABLE
+-- =====================================================
+
+CREATE TABLE hospital(
+    hospital_id INT PRIMARY KEY,
+    hospital_code INT UNIQUE,
+    hospital_name VARCHAR(100),
+    hospital_city VARCHAR(50)
+);
+
+-- hospital_id IS PRIMARY KEY
+-- hospital_id IS ALSO A CANDIDATE KEY
+-- hospital_code IS CANDIDATE KEY
+-- hospital_code IS ALSO AN ALTERNATE KEY
+-- hospital_code IS UNIQUE KEY
+
+
+-- INSERT DATA INTO HOSPITAL TABLE
+
+INSERT INTO hospital(hospital_id, hospital_code, hospital_name, hospital_city)
+VALUES
+(101, 1001, 'City Hospital', 'Gwalior'),
+(102, 1002, 'Life Care Hospital', 'Delhi'),
+(103, 1003, 'Sunrise Hospital', 'Mumbai'),
+(104, 1004, 'Apex Hospital', 'Bhopal'),
+(105, 1005, 'Medicare Hospital', 'Jaipur');
+
+
+-- DISPLAY HOSPITAL TABLE
+
+SELECT * FROM hospital;
+
+
+-- =====================================================
+-- STEP 2 :- HOSPITAL_PATIENT TABLE
+-- =====================================================
+
+CREATE TABLE hospital_patient(
+    patient_id INT PRIMARY KEY,
+    patient_name VARCHAR(50),
+    hospital_id INT,
+    patient_mobile VARCHAR(10) UNIQUE,
+    FOREIGN KEY (hospital_id) REFERENCES hospital(hospital_id)
+);
+
+-- patient_id IS PRIMARY KEY
+-- patient_id IS ALSO A CANDIDATE KEY
+-- patient_mobile IS CANDIDATE KEY
+-- patient_mobile IS ALSO AN ALTERNATE KEY
+-- patient_mobile IS UNIQUE KEY
+-- hospital_id IS FOREIGN KEY
+-- hospital_id REFERENCES hospital_id OF HOSPITAL TABLE
+
+
+-- INSERT DATA INTO HOSPITAL_PATIENT TABLE
+
+INSERT INTO hospital_patient(patient_id, patient_name, hospital_id, patient_mobile)
+VALUES
+(201, 'Amit Sharma', 101, '8172262622'),
+(202, 'Priya Verma', 102, '9272726253'),
+(203, 'Rahul Patel', 101, '8172262623'),
+(204, 'Neha Singh', 103, '9272726254'),
+(205, 'Rohit Kumar', 104, '8172262624'),
+(206, 'Pooja Gupta', 105, '8172262625'),
+(207, 'Anjali Mehta', 102, '9272726256');
+
+
+-- DISPLAY HOSPITAL_PATIENT TABLE
+
+SELECT * FROM hospital_patient;
+
+
+-- =====================================================
+-- STEP 3 :- JOIN BOTH TABLES
+-- =====================================================
+
+SELECT
+    hospital.hospital_id,
+    hospital.hospital_code,
+    hospital.hospital_name,
+    hospital.hospital_city,
+    hospital_patient.patient_id,
+    hospital_patient.patient_name,
+    hospital_patient.patient_mobile
+FROM hospital
+INNER JOIN hospital_patient
+ON hospital.hospital_id = hospital_patient.hospital_id;
+
+
 
 
 
