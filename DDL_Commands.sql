@@ -845,4 +845,53 @@ SELECT * FROM shop_details;
 
 DROP TABLE shop_details;
 
--- ________________________________________________________________________________________________________-
+-- ________________________________________________________________________________________________________
+
+
+CREATE TABLE hospital_doctor(
+    doctor_id INT,
+    doctor_name VARCHAR(50),
+    specialization VARCHAR(50),
+    doctor_mobile BIGINT,
+    doctor_address VARCHAR(100),
+    doctor_salary INT
+);
+
+SELECT * FROM hospital_doctor;
+
+ALTER TABLE hospital_doctor
+ADD COLUMN doctor_email VARCHAR(100);
+
+ALTER TABLE hospital_doctor
+RENAME COLUMN doctor_salary TO salary;
+
+ALTER TABLE hospital_doctor
+RENAME COLUMN doctor_name TO doctor_full_name;
+
+ALTER TABLE hospital_doctor
+RENAME COLUMN specialization TO department;
+
+ALTER TABLE hospital_doctor
+ALTER COLUMN doctor_full_name TYPE VARCHAR(100);
+
+ALTER TABLE hospital_doctor
+ALTER COLUMN department TYPE VARCHAR(100);
+
+ALTER TABLE hospital_doctor
+ALTER COLUMN doctor_address TYPE VARCHAR(150);
+
+ALTER TABLE hospital_doctor
+DROP COLUMN doctor_email;
+
+ALTER TABLE hospital_doctor
+RENAME TO hospital_doctor_details;
+
+SELECT * FROM hospital_doctor_details;
+
+TRUNCATE TABLE hospital_doctor_details;
+
+SELECT * FROM hospital_doctor_details;
+
+DROP TABLE hospital_doctor_details;
+
+-- _______________________________________________________________________________________________________
