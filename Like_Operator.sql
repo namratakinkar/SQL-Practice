@@ -1260,3 +1260,103 @@ WHERE subject_name LIKE '%Sc%';
 -- =====================================================
 -- END OF SUBJECT TABLE EXAMPLE
 -- =====================================================
+
+
+-- =====================================================
+-- Example 12 :- SHOP TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+-- CREATE TABLE (DDL COMMAND)
+
+CREATE TABLE shop(
+    product_id INT,
+    product_name VARCHAR(100),
+    product_code INT,
+    shopkeeper_name VARCHAR(100),
+    product_price INT,
+    product_type VARCHAR(50)
+);
+
+-- INSERT DATA (DML COMMAND)
+
+INSERT INTO shop(product_id, product_name, product_code, shopkeeper_name, product_price, product_type)
+VALUES
+(1, 'Laptop', 201, 'Amit Sharma', 45000, 'Electronics'),
+(2, 'Mobile', 202, 'Priya Verma', 15000, 'Electronics'),
+(3, 'Keyboard', 203, 'Rahul Patel', 1200, 'Accessories'),
+(4, 'Mouse', 204, 'Neha Singh', 500, 'Accessories'),
+(5, 'Monitor', 205, 'Rohit Kumar', 12000, 'Electronics'),
+(6, 'Printer', 206, 'Pooja Gupta', 8000, 'Electronics'),
+(7, 'Speaker', 207, 'Vikas Yadav', 2500, 'Accessories'),
+(8, 'Headphone', 208, 'Anjali Mehta', 1800, 'Accessories'),
+(9, 'Camera', 209, 'Suresh Jain', 25000, 'Electronics'),
+(10, 'Tablet', 210, 'Kavita Joshi', 18000, 'Electronics'),
+(11, 'Charger', 211, 'Deepak Verma', 700, 'Accessories'),
+(12, 'Pen Drive', 212, 'Sneha Patel', 600, 'Storage'),
+(13, 'Hard Disk', 213, 'Manish Sharma', 4500, 'Storage'),
+(14, 'Smart Watch', 214, 'Riya Agarwal', 3500, 'Accessories'),
+(15, 'Webcam', 215, 'Karan Malhotra', 2200, 'Electronics');
+
+-- DISPLAY DATA (DQL COMMAND)
+
+SELECT * FROM shop;
+
+
+-- LIKE OPERATOR (A%) STARTS WITH A
+
+SELECT * FROM shop
+WHERE product_name LIKE 'L%';
+
+SELECT * FROM shop
+WHERE product_name LIKE 'M%';
+
+SELECT * FROM shop
+WHERE product_name LIKE 'C%';
+
+SELECT * FROM shop
+WHERE product_name LIKE 'S%';
+
+SELECT * FROM shop
+WHERE product_name LIKE 'H%';
+
+
+-- LIKE OPERATOR (%a) ENDS WITH A
+
+SELECT * FROM shop
+WHERE product_name LIKE '%a';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%e';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%r';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%y';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%k';
+
+
+-- LIKE OPERATOR (%ab%) SUBSTRING
+
+SELECT * FROM shop
+WHERE product_name LIKE '%to%';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%ad%';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%am%';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%ar%';
+
+SELECT * FROM shop
+WHERE product_name LIKE '%en%';
+
+
+-- =====================================================
+-- END OF SHOP TABLE EXAMPLE
+-- =====================================================
