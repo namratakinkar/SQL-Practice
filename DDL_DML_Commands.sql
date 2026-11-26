@@ -2540,3 +2540,212 @@ DROP TABLE hospital_doctor_details;
 
 
 -- ________________________________________________________________________________________________________________
+
+-- ============================================
+--  Example 17 :- MANAGER TABLE
+-- DDL AND DML COMMANDS
+-- ============================================
+
+
+-- =====================================================
+-- Example :- MANAGER TABLE
+-- DDL AND DML COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE
+
+CREATE TABLE Manager_Table(
+    Manager_Id INT,
+    Manager_Name VARCHAR(50),
+    Age INT,
+    Department VARCHAR(50),
+    Salary INT
+);
+
+-- STEP 2 :- DISPLAY TABLE
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 3 :- INSERT VALUES
+
+INSERT INTO Manager_Table(Manager_Id, Manager_Name, Age, Department, Salary)
+VALUES
+(101, 'Rohit', 28, 'IT', 55000),
+(102, 'Amit', 35, 'HR', 50000),
+(103, 'Priya', 27, 'Finance', 40000),
+(104, 'Sneha', 32, 'Marketing', 45000),
+(105, 'Shubham', 38, 'Sales', 60000);
+
+-- STEP 4 :- DISPLAY INSERTED RECORDS
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 5 :- UPDATE MANAGER SALARY
+
+UPDATE Manager_Table
+SET Salary = 65000
+WHERE Manager_Id = 105;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 6 :- UPDATE MANAGER DEPARTMENT
+
+UPDATE Manager_Table
+SET Department = 'HR'
+WHERE Manager_Id = 102;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 7 :- UPDATE MANAGER AGE
+
+UPDATE Manager_Table
+SET Age = 32
+WHERE Manager_Id = 103;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 8 :- UPDATE MANAGER NAME
+
+UPDATE Manager_Table
+SET Manager_Name = 'Devid'
+WHERE Manager_Id = 104;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 9 :- DELETE MANAGER RECORD
+
+DELETE FROM Manager_Table
+WHERE Manager_Id = 102;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 10 :- ADD NEW COLUMN (CITY)
+
+ALTER TABLE Manager_Table
+ADD COLUMN City VARCHAR(50);
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 11 :- DISPLAY TABLE
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 12 :- UPDATE CITY (BHOPAL)
+
+UPDATE Manager_Table
+SET City = 'Bhopal'
+WHERE Manager_Id = 104;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 13 :- UPDATE CITY (INDORE)
+
+UPDATE Manager_Table
+SET City = 'Indore'
+WHERE Manager_Id = 105;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 14 :- UPDATE CITY (MUMBAI)
+
+UPDATE Manager_Table
+SET City = 'Mumbai'
+WHERE Manager_Id = 103;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 15 :- UPDATE CITY (DELHI)
+
+UPDATE Manager_Table
+SET City = 'Delhi'
+WHERE Manager_Id = 101;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 16 :- RENAME COLUMN AGE TO MANAGER_AGE
+
+ALTER TABLE Manager_Table
+RENAME COLUMN Age TO Manager_Age;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 17 :- RENAME COLUMN DEPARTMENT TO MANAGER_DEPARTMENT
+
+ALTER TABLE Manager_Table
+RENAME COLUMN Department TO Manager_Department;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 18 :- RENAME COLUMN SALARY TO MANAGER_SALARY
+
+ALTER TABLE Manager_Table
+RENAME COLUMN Salary TO Manager_Salary;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 19 :- ALTER COLUMN MANAGER_NAME DATA TYPE
+
+ALTER TABLE Manager_Table
+ALTER COLUMN Manager_Name TYPE VARCHAR(100);
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 20 :- ALTER COLUMN MANAGER_DEPARTMENT DATA TYPE
+
+ALTER TABLE Manager_Table
+ALTER COLUMN Manager_Department TYPE VARCHAR(100);
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 21 :- DROP CITY COLUMN
+
+ALTER TABLE Manager_Table
+DROP COLUMN City;
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 22 :- RENAME TABLE
+
+ALTER TABLE Manager_Table
+RENAME TO Manager_Details;
+
+SELECT * FROM Manager_Details;
+
+
+-- STEP 23 :- TRUNCATE TABLE
+
+TRUNCATE TABLE Manager_Details;
+
+SELECT * FROM Manager_Details;
+
+
+-- STEP 24 :- DROP TABLE
+
+DROP TABLE Manager_Details;
+
+
+-- =====================================================
+-- END OF MANAGER TABLE EXAMPLE
+-- =====================================================
+
+
