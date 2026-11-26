@@ -1356,6 +1356,164 @@ WHERE product_name LIKE '%ar%';
 SELECT * FROM shop
 WHERE product_name LIKE '%en%';
 
+--___________________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 13 :- MANAGER TABLE
+-- DDL, DML AND DQL COMMANDS
+-- =====================================================
+
+
+-- =====================================================
+-- Example :- MANAGER TABLE
+-- CREATE TABLE, INSERT VALUES AND LIKE OPERATOR
+-- =====================================================
+
+
+-- STEP 1 :- CREATE TABLE
+
+CREATE TABLE Manager_Table(
+    Manager_Id INT,
+    Manager_Name VARCHAR(50),
+    Age INT,
+    Department VARCHAR(50),
+    Salary INT,
+    City VARCHAR(50)
+);
+
+
+-- STEP 2 :- DISPLAY TABLE
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 3 :- INSERT VALUES INTO TABLE
+
+INSERT INTO Manager_Table(Manager_Id, Manager_Name, Age, Department, Salary, City)
+VALUES
+(101, 'Rohit', 28, 'IT', 55000, 'Indore'),
+(102, 'Amit', 35, 'HR', 50000, 'Bhopal'),
+(103, 'Priya', 27, 'Finance', 40000, 'Delhi'),
+(104, 'Sneha', 32, 'Marketing', 45000, 'Mumbai'),
+(105, 'Shubham', 38, 'Sales', 60000, 'Pune'),
+(106, 'David', 27, 'Marketing', 50000, 'Delhi'),
+(107, 'Sagar', 30, 'Marketing', 55000, 'Mumbai'),
+(108, 'Yash', 34, 'Sales', 45000, 'Pune'),
+(109, 'Purvi', 26, 'IT', 50000, 'Gwalior'),
+(110, 'Sakshi', 36, 'HR', 60000, 'Gujarat');
+
+
+-- STEP 4 :- DISPLAY INSERTED RECORDS
+
+SELECT * FROM Manager_Table;
+
+
+-- =====================================================
+-- STEP 5 :- LIKE OPERATOR (STARTS WITH)
+-- =====================================================
+
+-- LIKE OPERATOR (A%) :- NAME STARTS WITH A
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE 'A%';
+
+
+-- NAME STARTS WITH P
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE 'P%';
+
+
+-- NAME STARTS WITH S
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE 'S%';
+
+
+-- NAME STARTS WITH D
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE 'D%';
+
+
+-- NAME STARTS WITH R
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE 'R%';
+
+
+-- =====================================================
+-- STEP 6 :- LIKE OPERATOR (ENDS WITH)
+-- =====================================================
+
+-- LIKE OPERATOR (%t) :- NAME ENDS WITH t
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%t';
+
+
+-- NAME ENDS WITH a
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%a';
+
+
+-- NAME ENDS WITH r
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%r';
+
+
+-- NAME ENDS WITH i
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%i';
+
+
+-- NAME ENDS WITH m
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%m';
+
+
+-- =====================================================
+-- STEP 7 :- LIKE OPERATOR (SUBSTRING)
+-- =====================================================
+
+-- LIKE OPERATOR (%ubh%) :- NAME CONTAINS ubh
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%ubh%';
+
+
+-- NAME CONTAINS ri
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%ri%';
+
+
+-- NAME CONTAINS aga
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%aga%';
+
+
+-- NAME CONTAINS urv
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%urv%';
+
+
+-- NAME CONTAINS aks
+
+SELECT * FROM Manager_Table
+WHERE Manager_Name LIKE '%aks%';
+
+
+-- =====================================================
+-- END OF MANAGER TABLE AND LIKE OPERATOR EXAMPLE
+-- =====================================================
+
 
 -- =====================================================
 -- END OF SHOP TABLE EXAMPLE
