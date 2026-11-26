@@ -895,3 +895,63 @@ SELECT * FROM hospital_doctor_details;
 DROP TABLE hospital_doctor_details;
 
 -- _______________________________________________________________________________________________________
+
+-- Example 24 :-
+
+CREATE TABLE Manager_Table(
+    Manager_Id INT,
+    Manager_Name VARCHAR(50),
+    Age INT,
+    Department VARCHAR(50),
+    Salary INT
+);
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+ADD COLUMN city VARCHAR(50);
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+RENAME COLUMN Age TO Manager_Age;
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+RENAME COLUMN Department TO Manager_Department;
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+RENAME COLUMN Salary TO Manager_Salary;
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+ALTER COLUMN Manager_Name TYPE VARCHAR(100);
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+ALTER COLUMN Manager_Department TYPE VARCHAR(100);
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+DROP COLUMN city;
+
+SELECT * FROM Manager_Table;
+
+ALTER TABLE Manager_Table
+RENAME TO Manager_Details;
+
+SELECT * FROM Manager_Details;
+
+TRUNCATE TABLE Manager_Details;
+
+SELECT * FROM Manager_Details;
+
+DROP TABLE Manager_Details;
+
+--_______________________________________________________________________________________________________
