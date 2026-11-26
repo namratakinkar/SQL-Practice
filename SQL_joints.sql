@@ -771,6 +771,141 @@ FROM hospital
 FULL OUTER JOIN hospital_doctor
 ON hospital.hospital_id = hospital_doctor.hospital_id;
 
+--________________________________________________________________________________________________
+
+-- =====================================================
+-- Example 9 :- MANAGER_TABLE AND  DEPARTMENT_TABLE
+-- JOIN COMMANDS
+-- =====================================================
+
+
+-- STEP 1 :- CREATE MANAGER TABLE
+
+CREATE TABLE Manager_Table(
+    Manager_Id INT,
+    Manager_Name VARCHAR(50),
+    Department_Id INT
+);
+
+
+-- STEP 2 :- DISPLAY MANAGER TABLE
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 3 :- INSERT VALUES INTO MANAGER TABLE
+
+INSERT INTO Manager_Table(Manager_Id, Manager_Name, Department_Id)
+VALUES
+(1, 'Rahul', 101),
+(2, 'Priya', 102),
+(3, 'Amit', 103),
+(4, 'Neha', 104),
+(5, 'Vikas', 105);
+
+
+-- STEP 4 :- DISPLAY MANAGER RECORDS
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 5 :- CREATE DEPARTMENT TABLE
+
+CREATE TABLE Department_Table(
+    Department_Id INT,
+    Department_Name VARCHAR(50)
+);
+
+
+-- STEP 6 :- DISPLAY DEPARTMENT TABLE
+
+SELECT * FROM Department_Table;
+
+
+-- STEP 7 :- INSERT VALUES INTO DEPARTMENT TABLE
+
+INSERT INTO Department_Table(Department_Id, Department_Name)
+VALUES
+(101, 'HR'),
+(102, 'IT'),
+(103, 'Finance'),
+(104, 'Marketing'),
+(105, 'Sales');
+
+
+-- STEP 8 :- DISPLAY DEPARTMENT RECORDS
+
+SELECT * FROM Department_Table;
+
+
+-- =====================================================
+-- STEP 9 :- LEFT JOIN
+-- Returns all records from Left Table
+-- =====================================================
+
+SELECT
+    Manager_Table.Manager_Id,
+    Manager_Table.Manager_Name,
+    Manager_Table.Department_Id,
+    Department_Table.Department_Id,
+    Department_Table.Department_Name
+FROM Manager_Table
+LEFT JOIN Department_Table
+ON Manager_Table.Department_Id = Department_Table.Department_Id;
+
+
+-- =====================================================
+-- STEP 10 :- RIGHT JOIN
+-- Returns all records from Right Table
+-- =====================================================
+
+SELECT
+    Manager_Table.Manager_Id,
+    Manager_Table.Manager_Name,
+    Manager_Table.Department_Id,
+    Department_Table.Department_Id,
+    Department_Table.Department_Name
+FROM Manager_Table
+RIGHT JOIN Department_Table
+ON Manager_Table.Department_Id = Department_Table.Department_Id;
+
+
+-- =====================================================
+-- STEP 11 :- INNER JOIN
+-- Returns Matching Records From Both Tables
+-- =====================================================
+
+SELECT
+    Manager_Table.Manager_Id,
+    Manager_Table.Manager_Name,
+    Manager_Table.Department_Id,
+    Department_Table.Department_Id,
+    Department_Table.Department_Name
+FROM Manager_Table
+INNER JOIN Department_Table
+ON Manager_Table.Department_Id = Department_Table.Department_Id;
+
+
+-- =====================================================
+-- STEP 12 :- FULL OUTER JOIN
+-- Returns All Records From Both Tables
+-- =====================================================
+
+SELECT
+    Manager_Table.Manager_Id,
+    Manager_Table.Manager_Name,
+    Manager_Table.Department_Id,
+    Department_Table.Department_Id,
+    Department_Table.Department_Name
+FROM Manager_Table
+FULL OUTER JOIN Department_Table
+ON Manager_Table.Department_Id = Department_Table.Department_Id;
+
+
+-- =====================================================
+-- END OF MANAGER AND DEPARTMENT JOIN EXAMPLE
+-- =====================================================
+
 
 -- =====================================================
 -- END OF HOSPITAL AND HOSPITAL_DOCTOR TABLE EXAMPLE
