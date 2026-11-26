@@ -854,3 +854,52 @@ WHERE doctor_id = 2;
 SELECT * FROM hospital_doctor;
 
 -- ___________________________________________________________________________________________________________
+
+-- Example 24 :-
+
+INSERT INTO Manager_Table(Manager_Id, Manager_Name, Age, Department, Salary, City)
+VALUES
+(101, 'Rohit', 28, 'IT', 55000, 'Indore'),
+(102, 'Amit', 35, 'HR', 50000, 'Bhopal'),
+(103, 'Priya', 27, 'Finance', 40000, 'Delhi'),
+(104, 'Sneha', 32, 'Marketing', 45000, 'Mumbai'),
+(105, 'Shubham', 38, 'Sales', 60000, 'Pune');
+
+SELECT * FROM Manager_Table;
+
+UPDATE Manager_Table
+SET City = 'Mumbai'
+WHERE Manager_Id = 101;
+
+SELECT * FROM Manager_Table;
+
+UPDATE Manager_Table
+SET Salary = 65000
+WHERE Manager_Id = 105;
+
+SELECT * FROM Manager_Table;
+
+UPDATE Manager_Table
+SET Department = 'HR'
+WHERE Manager_Id = 102;
+
+SELECT * FROM Manager_Table;
+
+UPDATE Manager_Table
+SET Age = 32
+WHERE Manager_Id = 103;
+
+SELECT * FROM Manager_Table;
+
+UPDATE Manager_Table
+SET Manager_Name = 'Devid'
+WHERE Manager_Id = 104;
+
+SELECT * FROM Manager_Table;
+
+DELETE FROM Manager_Table
+WHERE Manager_Id = 102;
+
+SELECT * FROM Manager_Table;
+
+--_____________________________________________________________________________________________________________
