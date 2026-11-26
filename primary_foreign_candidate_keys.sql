@@ -366,6 +366,129 @@ FROM hospital
 INNER JOIN hospital_patient
 ON hospital.hospital_id = hospital_patient.hospital_id;
 
+--___________________________________________________________________________________
+
+
+-- =====================================================
+-- Example :- MANAGER AND DEPARTMENT TABLE
+-- PRIMARY KEY, FOREIGN KEY AND INNER JOIN
+-- =====================================================
+
+
+-- STEP 1 :- CREATE MANAGER TABLE
+
+CREATE TABLE Manager_Table(
+    Manager_Id INT PRIMARY KEY,          -- PRIMARY KEY
+    Manager_Name VARCHAR(50),
+    Age INT,
+    Department_Id INT,                   -- FOREIGN KEY
+    Salary INT,
+    City VARCHAR(50)
+);
+
+-- Manager_Id :- Primary Key
+-- Department_Id :- Foreign Key
+-- Manager_Id uniquely identifies each manager.
+
+
+-- STEP 2 :- DISPLAY MANAGER TABLE
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 3 :- INSERT VALUES INTO MANAGER TABLE
+
+INSERT INTO Manager_Table
+(Manager_Id, Manager_Name, Age, Department_Id, Salary, City)
+VALUES
+(101, 'Rohit', 28, 102, 55000, 'Indore'),
+(102, 'Amit', 35, 101, 50000, 'Bhopal'),
+(103, 'Priya', 27, 103, 40000, 'Delhi'),
+(104, 'Sneha', 32, 104, 45000, 'Mumbai'),
+(105, 'Shubham', 38, 105, 60000, 'Pune'),
+(106, 'David', 27, 104, 50000, 'Delhi');
+
+
+-- STEP 4 :- DISPLAY MANAGER RECORDS
+
+SELECT * FROM Manager_Table;
+
+
+-- STEP 5 :- CREATE DEPARTMENT TABLE
+
+CREATE TABLE Department_Table(
+    Department_Id INT PRIMARY KEY,       -- PRIMARY KEY
+    Department_Name VARCHAR(50),
+    Department_Location VARCHAR(50),
+    Department_Budget BIGINT,
+    Department_Head VARCHAR(50)
+);
+
+-- Department_Id :- Primary Key
+-- It uniquely identifies each department.
+
+
+-- STEP 6 :- DISPLAY DEPARTMENT TABLE
+
+SELECT * FROM Department_Table;
+
+
+-- STEP 7 :- INSERT VALUES INTO DEPARTMENT TABLE
+
+INSERT INTO Department_Table
+(Department_Id, Department_Name, Department_Location,
+ Department_Budget, Department_Head)
+VALUES
+(101, 'HR', 'Delhi', 500000, 'Anjali'),
+(102, 'IT', 'Mumbai', 800000, 'Rohit'),
+(103, 'Finance', 'Patna', 600000, 'Sneha'),
+(104, 'Marketing', 'Pune', 700000, 'Aman'),
+(105, 'Sales', 'Noida', 400000, 'Priya');
+
+
+-- STEP 8 :- DISPLAY DEPARTMENT RECORDS
+
+SELECT * FROM Department_Table;
+
+
+-- STEP 9 :- ADD FOREIGN KEY CONSTRAINT
+
+ALTER TABLE Manager_Table
+ADD CONSTRAINT fk_department
+FOREIGN KEY (Department_Id)
+REFERENCES Department_Table(Department_Id);
+
+-- Department_Id in Manager_Table :- Foreign Key
+-- Department_Id in Department_Table :- Primary Key
+-- Foreign Key connects both tables.
+
+
+-- STEP 10 :- INNER JOIN
+
+SELECT
+    Manager_Table.Manager_Id,
+    Manager_Table.Manager_Name,
+    Manager_Table.Age,
+    Manager_Table.Department_Id,
+    Manager_Table.Salary,
+    Manager_Table.City,
+    Department_Table.Department_Id,
+    Department_Table.Department_Name,
+    Department_Table.Department_Location,
+    Department_Table.Department_Budget,
+    Department_Table.Department_Head
+
+FROM Manager_Table
+
+INNER JOIN Department_Table
+
+ON Manager_Table.Department_Id =
+   Department_Table.Department_Id;
+
+
+-- =====================================================
+-- END OF MANAGER AND DEPARTMENT TABLE
+-- =====================================================
 
 
 
